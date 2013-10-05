@@ -33,26 +33,26 @@
             this.totalBox = new System.Windows.Forms.TextBox();
             this.totalCostLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.performanceBatteryLabel = new System.Windows.Forms.Label();
+            this.upgradeBatteryLabel = new System.Windows.Forms.Label();
             this.baseBatteryLabel = new System.Windows.Forms.Label();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.performanceBatteryButton = new System.Windows.Forms.RadioButton();
+            this.upgradeBatteryButton = new System.Windows.Forms.RadioButton();
             this.baseBatteryButton = new System.Windows.Forms.RadioButton();
             this.extraOptionsBox = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.fogLabel = new System.Windows.Forms.Label();
+            this.smartSuspensionLabel = new System.Windows.Forms.Label();
+            this.techLabel = new System.Windows.Forms.Label();
+            this.highPowerLabel = new System.Windows.Forms.Label();
+            this.fogBox = new System.Windows.Forms.CheckBox();
+            this.smartSuspensionBox = new System.Windows.Forms.CheckBox();
+            this.techBox = new System.Windows.Forms.CheckBox();
+            this.highPowerBox = new System.Windows.Forms.CheckBox();
             this.interiorOptionBox = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.leatherSeatLabel = new System.Windows.Forms.Label();
+            this.fabricSeatLabel = new System.Windows.Forms.Label();
             this.leatherSeatButton = new System.Windows.Forms.RadioButton();
-            this.fabricButton = new System.Windows.Forms.RadioButton();
+            this.fabricSeatButton = new System.Windows.Forms.RadioButton();
             this.wheelGroup = new System.Windows.Forms.GroupBox();
             this.Standard19Label = new System.Windows.Forms.Label();
             this.cyclone19Label = new System.Windows.Forms.Label();
@@ -72,6 +72,16 @@
             this.solidPaintButton = new System.Windows.Forms.RadioButton();
             this.colourOptionBox = new System.Windows.Forms.ListBox();
             this.settingsTab = new System.Windows.Forms.TabPage();
+            this.buyButton = new System.Windows.Forms.Button();
+            this.maximizeButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.franklinGothic12ptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.microsoftSansSerif12ptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,6 +90,8 @@
             this.wheelGroup.SuspendLayout();
             this.roofGroup.SuspendLayout();
             this.colourGroup.SuspendLayout();
+            this.settingsTab.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -99,6 +111,9 @@
             // 
             this.designTab.AutoScroll = true;
             this.designTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.designTab.Controls.Add(this.button1);
+            this.designTab.Controls.Add(this.maximizeButton);
+            this.designTab.Controls.Add(this.buyButton);
             this.designTab.Controls.Add(this.totalBox);
             this.designTab.Controls.Add(this.totalCostLabel);
             this.designTab.Controls.Add(this.groupBox1);
@@ -136,11 +151,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.performanceBatteryLabel);
+            this.groupBox1.Controls.Add(this.upgradeBatteryLabel);
             this.groupBox1.Controls.Add(this.baseBatteryLabel);
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.performanceBatteryButton);
+            this.groupBox1.Controls.Add(this.upgradeBatteryButton);
             this.groupBox1.Controls.Add(this.baseBatteryButton);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 301);
@@ -150,62 +165,65 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Battery Options";
             // 
-            // label7
+            // performanceBatteryLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.PaleGreen;
-            this.label7.Location = new System.Drawing.Point(293, 90);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 20);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "$21700";
+            this.performanceBatteryLabel.AutoSize = true;
+            this.performanceBatteryLabel.ForeColor = System.Drawing.Color.PaleGreen;
+            this.performanceBatteryLabel.Location = new System.Drawing.Point(259, 90);
+            this.performanceBatteryLabel.Name = "performanceBatteryLabel";
+            this.performanceBatteryLabel.Size = new System.Drawing.Size(63, 20);
+            this.performanceBatteryLabel.TabIndex = 7;
+            this.performanceBatteryLabel.Text = "$21700";
             // 
-            // label6
+            // upgradeBatteryLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.PaleGreen;
-            this.label6.Location = new System.Drawing.Point(296, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "$10700";
+            this.upgradeBatteryLabel.AutoSize = true;
+            this.upgradeBatteryLabel.ForeColor = System.Drawing.Color.PaleGreen;
+            this.upgradeBatteryLabel.Location = new System.Drawing.Point(259, 59);
+            this.upgradeBatteryLabel.Name = "upgradeBatteryLabel";
+            this.upgradeBatteryLabel.Size = new System.Drawing.Size(63, 20);
+            this.upgradeBatteryLabel.TabIndex = 6;
+            this.upgradeBatteryLabel.Text = "$10700";
             // 
             // baseBatteryLabel
             // 
             this.baseBatteryLabel.AutoSize = true;
-            this.baseBatteryLabel.Location = new System.Drawing.Point(296, 28);
+            this.baseBatteryLabel.Location = new System.Drawing.Point(259, 28);
             this.baseBatteryLabel.Name = "baseBatteryLabel";
             this.baseBatteryLabel.Size = new System.Drawing.Size(27, 20);
             this.baseBatteryLabel.TabIndex = 6;
             this.baseBatteryLabel.Text = "$0";
             // 
-            // radioButton5
+            // performanceBatteryButton
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.ForeColor = System.Drawing.Color.White;
-            this.radioButton5.Location = new System.Drawing.Point(5, 88);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(231, 24);
-            this.radioButton5.TabIndex = 2;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "85 kWh Performance Battery";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.performanceBatteryButton.AutoSize = true;
+            this.performanceBatteryButton.ForeColor = System.Drawing.Color.White;
+            this.performanceBatteryButton.Location = new System.Drawing.Point(5, 88);
+            this.performanceBatteryButton.Name = "performanceBatteryButton";
+            this.performanceBatteryButton.Size = new System.Drawing.Size(231, 24);
+            this.performanceBatteryButton.TabIndex = 2;
+            this.performanceBatteryButton.TabStop = true;
+            this.performanceBatteryButton.Text = "85 kWh Performance Battery";
+            this.performanceBatteryButton.UseVisualStyleBackColor = true;
+            this.performanceBatteryButton.Click += new System.EventHandler(this.BatteryButton_CheckedChanged);
             // 
-            // radioButton4
+            // upgradeBatteryButton
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.ForeColor = System.Drawing.Color.White;
-            this.radioButton4.Location = new System.Drawing.Point(6, 57);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(136, 24);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "85 kWh Battery";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.upgradeBatteryButton.AutoSize = true;
+            this.upgradeBatteryButton.ForeColor = System.Drawing.Color.White;
+            this.upgradeBatteryButton.Location = new System.Drawing.Point(6, 57);
+            this.upgradeBatteryButton.Name = "upgradeBatteryButton";
+            this.upgradeBatteryButton.Size = new System.Drawing.Size(136, 24);
+            this.upgradeBatteryButton.TabIndex = 1;
+            this.upgradeBatteryButton.TabStop = true;
+            this.upgradeBatteryButton.Text = "85 kWh Battery";
+            this.upgradeBatteryButton.UseVisualStyleBackColor = true;
+            this.upgradeBatteryButton.Click += new System.EventHandler(this.BatteryButton_CheckedChanged);
             // 
             // baseBatteryButton
             // 
             this.baseBatteryButton.AutoSize = true;
+            this.baseBatteryButton.Checked = true;
             this.baseBatteryButton.ForeColor = System.Drawing.Color.White;
             this.baseBatteryButton.Location = new System.Drawing.Point(7, 26);
             this.baseBatteryButton.Name = "baseBatteryButton";
@@ -214,17 +232,18 @@
             this.baseBatteryButton.TabStop = true;
             this.baseBatteryButton.Text = "60 kWh Battery";
             this.baseBatteryButton.UseVisualStyleBackColor = true;
+            this.baseBatteryButton.Click += new System.EventHandler(this.BatteryButton_CheckedChanged);
             // 
             // extraOptionsBox
             // 
-            this.extraOptionsBox.Controls.Add(this.label13);
-            this.extraOptionsBox.Controls.Add(this.label12);
-            this.extraOptionsBox.Controls.Add(this.label11);
-            this.extraOptionsBox.Controls.Add(this.label10);
-            this.extraOptionsBox.Controls.Add(this.checkBox4);
-            this.extraOptionsBox.Controls.Add(this.checkBox3);
-            this.extraOptionsBox.Controls.Add(this.checkBox2);
-            this.extraOptionsBox.Controls.Add(this.checkBox1);
+            this.extraOptionsBox.Controls.Add(this.fogLabel);
+            this.extraOptionsBox.Controls.Add(this.smartSuspensionLabel);
+            this.extraOptionsBox.Controls.Add(this.techLabel);
+            this.extraOptionsBox.Controls.Add(this.highPowerLabel);
+            this.extraOptionsBox.Controls.Add(this.fogBox);
+            this.extraOptionsBox.Controls.Add(this.smartSuspensionBox);
+            this.extraOptionsBox.Controls.Add(this.techBox);
+            this.extraOptionsBox.Controls.Add(this.highPowerBox);
             this.extraOptionsBox.ForeColor = System.Drawing.Color.White;
             this.extraOptionsBox.Location = new System.Drawing.Point(12, 520);
             this.extraOptionsBox.Name = "extraOptionsBox";
@@ -233,96 +252,100 @@
             this.extraOptionsBox.TabStop = false;
             this.extraOptionsBox.Text = "Extras";
             // 
-            // label13
+            // fogLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.PaleGreen;
-            this.label13.Location = new System.Drawing.Point(296, 94);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 20);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "$550";
+            this.fogLabel.AutoSize = true;
+            this.fogLabel.ForeColor = System.Drawing.Color.PaleGreen;
+            this.fogLabel.Location = new System.Drawing.Point(259, 94);
+            this.fogLabel.Name = "fogLabel";
+            this.fogLabel.Size = new System.Drawing.Size(45, 20);
+            this.fogLabel.TabIndex = 11;
+            this.fogLabel.Text = "$550";
             // 
-            // label12
+            // smartSuspensionLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.PaleGreen;
-            this.label12.Location = new System.Drawing.Point(296, 71);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 20);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "$2500";
+            this.smartSuspensionLabel.AutoSize = true;
+            this.smartSuspensionLabel.ForeColor = System.Drawing.Color.PaleGreen;
+            this.smartSuspensionLabel.Location = new System.Drawing.Point(259, 71);
+            this.smartSuspensionLabel.Name = "smartSuspensionLabel";
+            this.smartSuspensionLabel.Size = new System.Drawing.Size(54, 20);
+            this.smartSuspensionLabel.TabIndex = 10;
+            this.smartSuspensionLabel.Text = "$2500";
             // 
-            // label11
+            // techLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.PaleGreen;
-            this.label11.Location = new System.Drawing.Point(296, 49);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 20);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "$3900";
+            this.techLabel.AutoSize = true;
+            this.techLabel.ForeColor = System.Drawing.Color.PaleGreen;
+            this.techLabel.Location = new System.Drawing.Point(259, 49);
+            this.techLabel.Name = "techLabel";
+            this.techLabel.Size = new System.Drawing.Size(54, 20);
+            this.techLabel.TabIndex = 9;
+            this.techLabel.Text = "$3900";
             // 
-            // label10
+            // highPowerLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.PaleGreen;
-            this.label10.Location = new System.Drawing.Point(296, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 20);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "$2900";
+            this.highPowerLabel.AutoSize = true;
+            this.highPowerLabel.ForeColor = System.Drawing.Color.PaleGreen;
+            this.highPowerLabel.Location = new System.Drawing.Point(259, 27);
+            this.highPowerLabel.Name = "highPowerLabel";
+            this.highPowerLabel.Size = new System.Drawing.Size(54, 20);
+            this.highPowerLabel.TabIndex = 9;
+            this.highPowerLabel.Text = "$2900";
             // 
-            // checkBox4
+            // fogBox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.ForeColor = System.Drawing.Color.White;
-            this.checkBox4.Location = new System.Drawing.Point(6, 93);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(108, 24);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Fog Lamps";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.fogBox.AutoSize = true;
+            this.fogBox.ForeColor = System.Drawing.Color.White;
+            this.fogBox.Location = new System.Drawing.Point(6, 93);
+            this.fogBox.Name = "fogBox";
+            this.fogBox.Size = new System.Drawing.Size(108, 24);
+            this.fogBox.TabIndex = 3;
+            this.fogBox.Text = "Fog Lamps";
+            this.fogBox.UseVisualStyleBackColor = true;
+            this.fogBox.CheckedChanged += new System.EventHandler(this.fogBox_CheckedChanged);
             // 
-            // checkBox3
+            // smartSuspensionBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.ForeColor = System.Drawing.Color.White;
-            this.checkBox3.Location = new System.Drawing.Point(6, 70);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(182, 24);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Smart Air Suspension";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.smartSuspensionBox.AutoSize = true;
+            this.smartSuspensionBox.ForeColor = System.Drawing.Color.White;
+            this.smartSuspensionBox.Location = new System.Drawing.Point(6, 70);
+            this.smartSuspensionBox.Name = "smartSuspensionBox";
+            this.smartSuspensionBox.Size = new System.Drawing.Size(182, 24);
+            this.smartSuspensionBox.TabIndex = 2;
+            this.smartSuspensionBox.Text = "Smart Air Suspension";
+            this.smartSuspensionBox.UseVisualStyleBackColor = true;
+            this.smartSuspensionBox.CheckedChanged += new System.EventHandler(this.smartSuspensionBox_CheckedChanged);
             // 
-            // checkBox2
+            // techBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(6, 48);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(129, 24);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Tech Package";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.techBox.AutoSize = true;
+            this.techBox.ForeColor = System.Drawing.Color.White;
+            this.techBox.Location = new System.Drawing.Point(6, 48);
+            this.techBox.Name = "techBox";
+            this.techBox.Size = new System.Drawing.Size(129, 24);
+            this.techBox.TabIndex = 1;
+            this.techBox.Text = "Tech Package";
+            this.techBox.UseVisualStyleBackColor = true;
+            this.techBox.CheckedChanged += new System.EventHandler(this.techBox_CheckedChanged);
             // 
-            // checkBox1
+            // highPowerBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(7, 26);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(224, 24);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "High Power Home Charging";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.highPowerBox.AutoSize = true;
+            this.highPowerBox.ForeColor = System.Drawing.Color.White;
+            this.highPowerBox.Location = new System.Drawing.Point(7, 26);
+            this.highPowerBox.Name = "highPowerBox";
+            this.highPowerBox.Size = new System.Drawing.Size(224, 24);
+            this.highPowerBox.TabIndex = 0;
+            this.highPowerBox.Text = "High Power Home Charging";
+            this.highPowerBox.UseVisualStyleBackColor = true;
+            this.highPowerBox.CheckedChanged += new System.EventHandler(this.highPowerBox_CheckedChanged);
             // 
             // interiorOptionBox
             // 
-            this.interiorOptionBox.Controls.Add(this.label9);
-            this.interiorOptionBox.Controls.Add(this.label8);
+            this.interiorOptionBox.Controls.Add(this.leatherSeatLabel);
+            this.interiorOptionBox.Controls.Add(this.fabricSeatLabel);
             this.interiorOptionBox.Controls.Add(this.leatherSeatButton);
-            this.interiorOptionBox.Controls.Add(this.fabricButton);
+            this.interiorOptionBox.Controls.Add(this.fabricSeatButton);
             this.interiorOptionBox.ForeColor = System.Drawing.Color.White;
             this.interiorOptionBox.Location = new System.Drawing.Point(12, 425);
             this.interiorOptionBox.Name = "interiorOptionBox";
@@ -331,24 +354,24 @@
             this.interiorOptionBox.TabStop = false;
             this.interiorOptionBox.Text = "Interior Options";
             // 
-            // label9
+            // leatherSeatLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(296, 58);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "$0";
+            this.leatherSeatLabel.AutoSize = true;
+            this.leatherSeatLabel.ForeColor = System.Drawing.Color.White;
+            this.leatherSeatLabel.Location = new System.Drawing.Point(259, 58);
+            this.leatherSeatLabel.Name = "leatherSeatLabel";
+            this.leatherSeatLabel.Size = new System.Drawing.Size(27, 20);
+            this.leatherSeatLabel.TabIndex = 8;
+            this.leatherSeatLabel.Text = "$0";
             // 
-            // label8
+            // fabricSeatLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(296, 28);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(27, 20);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "$0";
+            this.fabricSeatLabel.AutoSize = true;
+            this.fabricSeatLabel.Location = new System.Drawing.Point(259, 28);
+            this.fabricSeatLabel.Name = "fabricSeatLabel";
+            this.fabricSeatLabel.Size = new System.Drawing.Size(27, 20);
+            this.fabricSeatLabel.TabIndex = 8;
+            this.fabricSeatLabel.Text = "$0";
             // 
             // leatherSeatButton
             // 
@@ -361,18 +384,18 @@
             this.leatherSeatButton.Text = "Leather Seats";
             this.leatherSeatButton.UseVisualStyleBackColor = true;
             // 
-            // fabricButton
+            // fabricSeatButton
             // 
-            this.fabricButton.AutoSize = true;
-            this.fabricButton.Checked = true;
-            this.fabricButton.ForeColor = System.Drawing.Color.White;
-            this.fabricButton.Location = new System.Drawing.Point(7, 26);
-            this.fabricButton.Name = "fabricButton";
-            this.fabricButton.Size = new System.Drawing.Size(117, 24);
-            this.fabricButton.TabIndex = 0;
-            this.fabricButton.TabStop = true;
-            this.fabricButton.Text = "Fabric Seats";
-            this.fabricButton.UseVisualStyleBackColor = true;
+            this.fabricSeatButton.AutoSize = true;
+            this.fabricSeatButton.Checked = true;
+            this.fabricSeatButton.ForeColor = System.Drawing.Color.White;
+            this.fabricSeatButton.Location = new System.Drawing.Point(7, 26);
+            this.fabricSeatButton.Name = "fabricSeatButton";
+            this.fabricSeatButton.Size = new System.Drawing.Size(117, 24);
+            this.fabricSeatButton.TabIndex = 0;
+            this.fabricSeatButton.TabStop = true;
+            this.fabricSeatButton.Text = "Fabric Seats";
+            this.fabricSeatButton.UseVisualStyleBackColor = true;
             // 
             // wheelGroup
             // 
@@ -393,7 +416,7 @@
             // Standard19Label
             // 
             this.Standard19Label.AutoSize = true;
-            this.Standard19Label.Location = new System.Drawing.Point(296, 27);
+            this.Standard19Label.Location = new System.Drawing.Point(259, 27);
             this.Standard19Label.Name = "Standard19Label";
             this.Standard19Label.Size = new System.Drawing.Size(27, 20);
             this.Standard19Label.TabIndex = 4;
@@ -403,7 +426,7 @@
             // 
             this.cyclone19Label.AutoSize = true;
             this.cyclone19Label.ForeColor = System.Drawing.Color.PaleGreen;
-            this.cyclone19Label.Location = new System.Drawing.Point(296, 48);
+            this.cyclone19Label.Location = new System.Drawing.Point(259, 48);
             this.cyclone19Label.Name = "cyclone19Label";
             this.cyclone19Label.Size = new System.Drawing.Size(54, 20);
             this.cyclone19Label.TabIndex = 5;
@@ -413,7 +436,7 @@
             // 
             this.cyclone21Label.AutoSize = true;
             this.cyclone21Label.ForeColor = System.Drawing.Color.PaleGreen;
-            this.cyclone21Label.Location = new System.Drawing.Point(296, 72);
+            this.cyclone21Label.Location = new System.Drawing.Point(259, 72);
             this.cyclone21Label.Name = "cyclone21Label";
             this.cyclone21Label.Size = new System.Drawing.Size(54, 20);
             this.cyclone21Label.TabIndex = 4;
@@ -448,6 +471,7 @@
             // Standard19Button
             // 
             this.Standard19Button.AutoSize = true;
+            this.Standard19Button.Checked = true;
             this.Standard19Button.ForeColor = System.Drawing.Color.White;
             this.Standard19Button.Location = new System.Drawing.Point(6, 25);
             this.Standard19Button.Name = "Standard19Button";
@@ -476,7 +500,7 @@
             // 
             this.glassRoofLabel.AutoSize = true;
             this.glassRoofLabel.ForeColor = System.Drawing.Color.PaleGreen;
-            this.glassRoofLabel.Location = new System.Drawing.Point(297, 60);
+            this.glassRoofLabel.Location = new System.Drawing.Point(260, 60);
             this.glassRoofLabel.Name = "glassRoofLabel";
             this.glassRoofLabel.Size = new System.Drawing.Size(54, 20);
             this.glassRoofLabel.TabIndex = 3;
@@ -485,7 +509,7 @@
             // solidRoofLabel
             // 
             this.solidRoofLabel.AutoSize = true;
-            this.solidRoofLabel.Location = new System.Drawing.Point(297, 28);
+            this.solidRoofLabel.Location = new System.Drawing.Point(260, 28);
             this.solidRoofLabel.Name = "solidRoofLabel";
             this.solidRoofLabel.Size = new System.Drawing.Size(27, 20);
             this.solidRoofLabel.TabIndex = 2;
@@ -507,6 +531,7 @@
             // solidRoofButton
             // 
             this.solidRoofButton.AutoSize = true;
+            this.solidRoofButton.Checked = true;
             this.solidRoofButton.ForeColor = System.Drawing.Color.White;
             this.solidRoofButton.Location = new System.Drawing.Point(7, 26);
             this.solidRoofButton.Name = "solidRoofButton";
@@ -566,6 +591,7 @@
             // solidPaintButton
             // 
             this.solidPaintButton.AutoSize = true;
+            this.solidPaintButton.Checked = true;
             this.solidPaintButton.ForeColor = System.Drawing.Color.White;
             this.solidPaintButton.Location = new System.Drawing.Point(7, 24);
             this.solidPaintButton.Name = "solidPaintButton";
@@ -589,12 +615,97 @@
             // settingsTab
             // 
             this.settingsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.settingsTab.Controls.Add(this.menuStrip1);
             this.settingsTab.Location = new System.Drawing.Point(4, 34);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
             this.settingsTab.Size = new System.Drawing.Size(391, 812);
             this.settingsTab.TabIndex = 1;
             this.settingsTab.Text = "Settings";
+            // 
+            // buyButton
+            // 
+            this.buyButton.Location = new System.Drawing.Point(300, 711);
+            this.buyButton.Name = "buyButton";
+            this.buyButton.Size = new System.Drawing.Size(75, 29);
+            this.buyButton.TabIndex = 14;
+            this.buyButton.Text = "&Buy Car";
+            this.buyButton.UseVisualStyleBackColor = true;
+            // 
+            // maximizeButton
+            // 
+            this.maximizeButton.Location = new System.Drawing.Point(121, 711);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.Size = new System.Drawing.Size(151, 29);
+            this.maximizeButton.TabIndex = 15;
+            this.maximizeButton.Text = "&Maximize Options";
+            this.maximizeButton.UseVisualStyleBackColor = true;
+            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(50, 806);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fontToolStripMenuItem,
+            this.colorToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // fontToolStripMenuItem
+            // 
+            this.fontToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.franklinGothic12ptToolStripMenuItem,
+            this.microsoftSansSerif12ptToolStripMenuItem});
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fontToolStripMenuItem.Text = "Font...";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
+            // 
+            // colorToolStripMenuItem
+            // 
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.colorToolStripMenuItem.Text = "Color...";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(18, 711);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 29);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "&Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // franklinGothic12ptToolStripMenuItem
+            // 
+            this.franklinGothic12ptToolStripMenuItem.Name = "franklinGothic12ptToolStripMenuItem";
+            this.franklinGothic12ptToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.franklinGothic12ptToolStripMenuItem.Text = "Franklin Gothic, 12pt";
+            // 
+            // microsoftSansSerif12ptToolStripMenuItem
+            // 
+            this.microsoftSansSerif12ptToolStripMenuItem.Name = "microsoftSansSerif12ptToolStripMenuItem";
+            this.microsoftSansSerif12ptToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.microsoftSansSerif12ptToolStripMenuItem.Text = "Microsoft Sans Serif, 12pt";
             // 
             // teslaSForm
             // 
@@ -604,6 +715,7 @@
             this.ClientSize = new System.Drawing.Size(394, 847);
             this.Controls.Add(this.tabMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "teslaSForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -625,6 +737,10 @@
             this.roofGroup.PerformLayout();
             this.colourGroup.ResumeLayout(false);
             this.colourGroup.PerformLayout();
+            this.settingsTab.ResumeLayout(false);
+            this.settingsTab.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -647,25 +763,25 @@
         private System.Windows.Forms.RadioButton Standard19Button;
         private System.Windows.Forms.GroupBox interiorOptionBox;
         private System.Windows.Forms.RadioButton leatherSeatButton;
-        private System.Windows.Forms.RadioButton fabricButton;
+        private System.Windows.Forms.RadioButton fabricSeatButton;
         private System.Windows.Forms.GroupBox extraOptionsBox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton performanceBatteryButton;
+        private System.Windows.Forms.RadioButton upgradeBatteryButton;
         private System.Windows.Forms.RadioButton baseBatteryButton;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox fogBox;
+        private System.Windows.Forms.CheckBox smartSuspensionBox;
+        private System.Windows.Forms.CheckBox techBox;
+        private System.Windows.Forms.CheckBox highPowerBox;
+        private System.Windows.Forms.Label performanceBatteryLabel;
+        private System.Windows.Forms.Label upgradeBatteryLabel;
         private System.Windows.Forms.Label baseBatteryLabel;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label fogLabel;
+        private System.Windows.Forms.Label smartSuspensionLabel;
+        private System.Windows.Forms.Label techLabel;
+        private System.Windows.Forms.Label highPowerLabel;
+        private System.Windows.Forms.Label leatherSeatLabel;
+        private System.Windows.Forms.Label fabricSeatLabel;
         private System.Windows.Forms.Label Standard19Label;
         private System.Windows.Forms.Label cyclone19Label;
         private System.Windows.Forms.Label cyclone21Label;
@@ -675,6 +791,16 @@
         private System.Windows.Forms.Label totalCostLabel;
         private System.Windows.Forms.Label metalPaintLabel;
         private System.Windows.Forms.Label solidPaintLabel;
+        private System.Windows.Forms.Button maximizeButton;
+        private System.Windows.Forms.Button buyButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem franklinGothic12ptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem microsoftSansSerif12ptToolStripMenuItem;
     }
 }
 
