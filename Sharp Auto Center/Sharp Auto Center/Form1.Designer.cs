@@ -35,7 +35,7 @@
             this.buyButton = new System.Windows.Forms.Button();
             this.totalBox = new System.Windows.Forms.TextBox();
             this.totalCostLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.batteryGroup = new System.Windows.Forms.GroupBox();
             this.performanceBatteryLabel = new System.Windows.Forms.Label();
             this.upgradeBatteryLabel = new System.Windows.Forms.Label();
             this.baseBatteryLabel = new System.Windows.Forms.Label();
@@ -82,9 +82,12 @@
             this.microsoftSansSerif12ptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.segoeUI12ptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.batteryGroup.SuspendLayout();
             this.extraOptionsBox.SuspendLayout();
             this.interiorOptionBox.SuspendLayout();
             this.wheelGroup.SuspendLayout();
@@ -116,7 +119,7 @@
             this.designTab.Controls.Add(this.buyButton);
             this.designTab.Controls.Add(this.totalBox);
             this.designTab.Controls.Add(this.totalCostLabel);
-            this.designTab.Controls.Add(this.groupBox1);
+            this.designTab.Controls.Add(this.batteryGroup);
             this.designTab.Controls.Add(this.extraOptionsBox);
             this.designTab.Controls.Add(this.interiorOptionBox);
             this.designTab.Controls.Add(this.wheelGroup);
@@ -178,21 +181,21 @@
             this.totalCostLabel.TabIndex = 12;
             this.totalCostLabel.Text = "Total Cost";
             // 
-            // groupBox1
+            // batteryGroup
             // 
-            this.groupBox1.Controls.Add(this.performanceBatteryLabel);
-            this.groupBox1.Controls.Add(this.upgradeBatteryLabel);
-            this.groupBox1.Controls.Add(this.baseBatteryLabel);
-            this.groupBox1.Controls.Add(this.performanceBatteryButton);
-            this.groupBox1.Controls.Add(this.upgradeBatteryButton);
-            this.groupBox1.Controls.Add(this.baseBatteryButton);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 301);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 118);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Battery Options";
+            this.batteryGroup.Controls.Add(this.performanceBatteryLabel);
+            this.batteryGroup.Controls.Add(this.upgradeBatteryLabel);
+            this.batteryGroup.Controls.Add(this.baseBatteryLabel);
+            this.batteryGroup.Controls.Add(this.performanceBatteryButton);
+            this.batteryGroup.Controls.Add(this.upgradeBatteryButton);
+            this.batteryGroup.Controls.Add(this.baseBatteryButton);
+            this.batteryGroup.ForeColor = System.Drawing.Color.White;
+            this.batteryGroup.Location = new System.Drawing.Point(12, 301);
+            this.batteryGroup.Name = "batteryGroup";
+            this.batteryGroup.Size = new System.Drawing.Size(373, 118);
+            this.batteryGroup.TabIndex = 11;
+            this.batteryGroup.TabStop = false;
+            this.batteryGroup.Text = "Battery Options";
             // 
             // performanceBatteryLabel
             // 
@@ -639,7 +642,6 @@
             this.colourOptionBox.Name = "colourOptionBox";
             this.colourOptionBox.Size = new System.Drawing.Size(151, 84);
             this.colourOptionBox.TabIndex = 3;
-            this.colourOptionBox.Visible = false;
             // 
             // settingsTab
             // 
@@ -660,7 +662,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 3);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(98, 806);
+            this.menuStrip1.Size = new System.Drawing.Size(50, 806);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -677,7 +679,8 @@
             // 
             this.fontToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.franklinGothic12ptToolStripMenuItem,
-            this.microsoftSansSerif12ptToolStripMenuItem});
+            this.microsoftSansSerif12ptToolStripMenuItem,
+            this.segoeUI12ptToolStripMenuItem});
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
             this.fontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fontToolStripMenuItem.Text = "Font...";
@@ -686,7 +689,7 @@
             // 
             this.franklinGothic12ptToolStripMenuItem.Name = "franklinGothic12ptToolStripMenuItem";
             this.franklinGothic12ptToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.franklinGothic12ptToolStripMenuItem.Text = "Franklin Gothic, 12pt";
+            this.franklinGothic12ptToolStripMenuItem.Text = "Forte, 12pt";
             this.franklinGothic12ptToolStripMenuItem.Click += new System.EventHandler(this.franklinGothic12ptToolStripMenuItem_Click);
             // 
             // microsoftSansSerif12ptToolStripMenuItem
@@ -694,18 +697,43 @@
             this.microsoftSansSerif12ptToolStripMenuItem.Name = "microsoftSansSerif12ptToolStripMenuItem";
             this.microsoftSansSerif12ptToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.microsoftSansSerif12ptToolStripMenuItem.Text = "Microsoft Sans Serif, 12pt";
+            this.microsoftSansSerif12ptToolStripMenuItem.Click += new System.EventHandler(this.microsoftSansSerif12ptToolStripMenuItem_Click);
             // 
             // colorToolStripMenuItem
             // 
+            this.colorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darkUIToolStripMenuItem,
+            this.lightUIToolStripMenuItem});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
             this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.colorToolStripMenuItem.Text = "Color...";
+            this.colorToolStripMenuItem.Text = "Theme...";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // segoeUI12ptToolStripMenuItem
+            // 
+            this.segoeUI12ptToolStripMenuItem.Name = "segoeUI12ptToolStripMenuItem";
+            this.segoeUI12ptToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.segoeUI12ptToolStripMenuItem.Text = "Segoe UI Black, 12pt";
+            this.segoeUI12ptToolStripMenuItem.Click += new System.EventHandler(this.segoeUI12ptToolStripMenuItem_Click);
+            // 
+            // darkUIToolStripMenuItem
+            // 
+            this.darkUIToolStripMenuItem.Name = "darkUIToolStripMenuItem";
+            this.darkUIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.darkUIToolStripMenuItem.Text = "Dark UI";
+            this.darkUIToolStripMenuItem.Click += new System.EventHandler(this.darkUIToolStripMenuItem_Click);
+            // 
+            // lightUIToolStripMenuItem
+            // 
+            this.lightUIToolStripMenuItem.Name = "lightUIToolStripMenuItem";
+            this.lightUIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lightUIToolStripMenuItem.Text = "Light UI";
+            this.lightUIToolStripMenuItem.Click += new System.EventHandler(this.lightUIToolStripMenuItem_Click);
             // 
             // teslaSForm
             // 
@@ -725,8 +753,8 @@
             this.tabMenu.ResumeLayout(false);
             this.designTab.ResumeLayout(false);
             this.designTab.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.batteryGroup.ResumeLayout(false);
+            this.batteryGroup.PerformLayout();
             this.extraOptionsBox.ResumeLayout(false);
             this.extraOptionsBox.PerformLayout();
             this.interiorOptionBox.ResumeLayout(false);
@@ -765,7 +793,7 @@
         private System.Windows.Forms.RadioButton leatherSeatButton;
         private System.Windows.Forms.RadioButton fabricSeatButton;
         private System.Windows.Forms.GroupBox extraOptionsBox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox batteryGroup;
         private System.Windows.Forms.RadioButton performanceBatteryButton;
         private System.Windows.Forms.RadioButton upgradeBatteryButton;
         private System.Windows.Forms.RadioButton baseBatteryButton;
@@ -801,6 +829,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem franklinGothic12ptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem microsoftSansSerif12ptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem segoeUI12ptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darkUIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lightUIToolStripMenuItem;
     }
 }
 

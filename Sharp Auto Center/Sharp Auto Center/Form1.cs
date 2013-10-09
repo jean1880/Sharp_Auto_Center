@@ -36,6 +36,7 @@ namespace Sharp_Auto_Center
         private decimal wheelCost   = 0;
         private decimal batteryCost = 0;
         private decimal optionCost  = 0;
+        private string formTheme = "darkUI";
 
         public teslaSForm()
         {
@@ -47,7 +48,6 @@ namespace Sharp_Auto_Center
             if (solidPaintButton.Checked && this.paintCost > NONE-METAL_PAINT_COST)
             {
                 // set colour options
-                colourOptionBox.Visible     = true;
                 colourOptionBox.DataSource  = colours(0);
 
                 // check if the price has been set already, if it has, exit the method and save processor cycles
@@ -69,7 +69,6 @@ namespace Sharp_Auto_Center
             else
             {
                 // Set colour choices
-                colourOptionBox.Visible     = true;
                 colourOptionBox.DataSource  = colours(1);
 
                 // check if the price has been set already, if it has, exit the method and save processor cycles
@@ -180,6 +179,9 @@ namespace Sharp_Auto_Center
             techLabel.Text                  = TECH_PACKAGE.ToString("C");
             smartSuspensionLabel.Text       = SMART_SUSPENSION.ToString("C");
             fogLabel.Text                   = FOG_LAMPS.ToString("C");
+
+            // Set colour options to initial option
+            colourOptionBox.DataSource = colours(0);
         }
 
         /**
@@ -474,11 +476,130 @@ namespace Sharp_Auto_Center
         
         private void franklinGothic12ptToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            changeFont("Franklin Gothic","12pt");
+            // change the font
+            changeFont(new Font("Forte",12));
         }
 
-        private void changeFont(string fontFamilyName, string fontSize)
+        private void microsoftSansSerif12ptToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // change the font
+            changeFont(new Font("Microsoft Sans Serif", 12));
         }
+
+        private void segoeUI12ptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // change the font
+            changeFont(new Font("Segoe UI Black", 12));
+        }
+
+        /**
+         * Changes the fonts of the form to the font passed into the function
+         * @param fontaFamilyName Name of font to change interfaces to
+         */
+        private void changeFont(Font fontFamilyName)
+        {
+            solidPaintButton.Font           = fontFamilyName;
+            solidPaintLabel.Font            = fontFamilyName;
+            metallicPaintButton.Font        = fontFamilyName;
+            metalPaintLabel.Font            = fontFamilyName;
+            colourGroup.Font                = fontFamilyName;
+            colourOptionBox.Font            = fontFamilyName;
+            roofGroup.Font                  = fontFamilyName;
+            solidRoofButton.Font            = fontFamilyName;
+            solidRoofLabel.Font             = fontFamilyName;
+            glassRoofButton.Font            = fontFamilyName;
+            glassRoofLabel.Font             = fontFamilyName;
+            wheelGroup.Font                 = fontFamilyName;
+            Standard19Button.Font           = fontFamilyName;
+            Standard19Label.Font            = fontFamilyName;
+            cyclone19Button.Font            = fontFamilyName;
+            cyclone21Label.Font             = fontFamilyName;
+            cyclone21Button.Font            = fontFamilyName;
+            baseBatteryButton.Font          = fontFamilyName;
+            baseBatteryLabel.Font           = fontFamilyName;
+            performanceBatteryButton.Font   = fontFamilyName;
+            performanceBatteryLabel.Font    = fontFamilyName;
+            upgradeBatteryButton.Font       = fontFamilyName;
+            upgradeBatteryLabel.Font        = fontFamilyName;
+            batteryGroup.Font               = fontFamilyName;
+            interiorOptionBox.Font          = fontFamilyName;
+            fabricSeatButton.Font           = fontFamilyName;
+            fabricSeatLabel.Font            = fontFamilyName;
+            leatherSeatButton.Font          = fontFamilyName;
+            leatherSeatLabel.Font           = fontFamilyName;
+            extraOptionsBox.Font            = fontFamilyName;
+            highPowerBox.Font               = fontFamilyName;
+            highPowerLabel.Font             = fontFamilyName;
+            techBox.Font                    = fontFamilyName;
+            techLabel.Font                  = fontFamilyName;
+            smartSuspensionBox.Font         = fontFamilyName;
+            smartSuspensionLabel.Font       = fontFamilyName;
+            fogBox.Font                     = fontFamilyName;
+            fogLabel.Font                   = fontFamilyName;
+        }
+
+        private void changeFontColor(Color fontColor)
+        {
+            solidPaintButton.ForeColor          = fontColor;
+            solidPaintLabel.ForeColor           = fontColor;
+            metallicPaintButton.ForeColor       = fontColor;
+            metalPaintLabel.ForeColor           = fontColor;
+            colourGroup.ForeColor               = fontColor;
+            colourOptionBox.ForeColor           = fontColor;
+            roofGroup.ForeColor                 = fontColor;
+            solidRoofButton.ForeColor           = fontColor;
+            solidRoofLabel.ForeColor            = fontColor;
+            glassRoofButton.ForeColor           = fontColor;
+            glassRoofLabel.ForeColor            = fontColor;
+            wheelGroup.ForeColor                = fontColor;
+            Standard19Button.ForeColor          = fontColor;
+            Standard19Label.ForeColor           = fontColor;
+            cyclone19Label.ForeColor            = fontColor;
+            cyclone19Button.ForeColor           = fontColor;
+            cyclone21Label.ForeColor            = fontColor;
+            cyclone21Button.ForeColor           = fontColor;
+            baseBatteryButton.ForeColor         = fontColor;
+            baseBatteryLabel.ForeColor          = fontColor;
+            performanceBatteryButton.ForeColor  = fontColor;
+            performanceBatteryLabel.ForeColor   = fontColor;
+            upgradeBatteryButton.ForeColor      = fontColor;
+            upgradeBatteryLabel.ForeColor       = fontColor;
+            batteryGroup.ForeColor              = fontColor;
+            interiorOptionBox.ForeColor         = fontColor;
+            fabricSeatButton.ForeColor          = fontColor;
+            fabricSeatLabel.ForeColor           = fontColor;
+            leatherSeatButton.ForeColor         = fontColor;
+            leatherSeatLabel.ForeColor          = fontColor;
+            extraOptionsBox.ForeColor           = fontColor;
+            highPowerBox.ForeColor              = fontColor;
+            highPowerLabel.ForeColor            = fontColor;
+            techBox.ForeColor                   = fontColor;
+            techLabel.ForeColor                 = fontColor;
+            smartSuspensionBox.ForeColor        = fontColor;
+            smartSuspensionLabel.ForeColor      = fontColor;
+            fogBox.ForeColor                    = fontColor;
+            fogLabel.ForeColor                  = fontColor;
+        }
+
+        private void darkUIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formTheme = "darkUI";
+            changeColors(Color.FromArgb(64,64,64), Color.White);
+            changeFontColor(Color.White);
+        }
+
+        private void lightUIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formTheme = "lightUI";
+            changeColors(Color.FromArgb(220, 220, 220), Color.Black);
+            changeFontColor(Color.Black);
+        }
+
+        private void changeColors(Color formBackground, Color textColor)
+        {
+            designTab.BackColor = formBackground;
+            settingsTab.BackColor = formBackground;
+        }
+
     }
 }
