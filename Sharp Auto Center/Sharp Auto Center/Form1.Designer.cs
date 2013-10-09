@@ -30,7 +30,7 @@
         {
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.designTab = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
             this.maximizeButton = new System.Windows.Forms.Button();
             this.buyButton = new System.Windows.Forms.Button();
             this.totalBox = new System.Windows.Forms.TextBox();
@@ -75,16 +75,20 @@
             this.solidPaintButton = new System.Windows.Forms.RadioButton();
             this.colourOptionBox = new System.Windows.Forms.ListBox();
             this.settingsTab = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.franklinGothic12ptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.microsoftSansSerif12ptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.segoeUI12ptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.themeLabel = new System.Windows.Forms.Label();
+            this.themeBox = new System.Windows.Forms.GroupBox();
+            this.fontSelectionBox = new System.Windows.Forms.GroupBox();
+            this.fontSelectionLabel = new System.Windows.Forms.Label();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
             this.batteryGroup.SuspendLayout();
@@ -94,7 +98,9 @@
             this.roofGroup.SuspendLayout();
             this.colourGroup.SuspendLayout();
             this.settingsTab.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
+            this.themeBox.SuspendLayout();
+            this.fontSelectionBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -107,14 +113,14 @@
             this.tabMenu.Location = new System.Drawing.Point(-3, 0);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(399, 850);
+            this.tabMenu.Size = new System.Drawing.Size(416, 850);
             this.tabMenu.TabIndex = 0;
             // 
             // designTab
             // 
             this.designTab.AutoScroll = true;
             this.designTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.designTab.Controls.Add(this.button1);
+            this.designTab.Controls.Add(this.resetButton);
             this.designTab.Controls.Add(this.maximizeButton);
             this.designTab.Controls.Add(this.buyButton);
             this.designTab.Controls.Add(this.totalBox);
@@ -134,15 +140,15 @@
             this.designTab.TabIndex = 0;
             this.designTab.Text = "Design";
             // 
-            // button1
+            // resetButton
             // 
-            this.button1.Location = new System.Drawing.Point(18, 711);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "&Reset";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.resetButton.Location = new System.Drawing.Point(18, 711);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(75, 29);
+            this.resetButton.TabIndex = 16;
+            this.resetButton.Text = "&Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // maximizeButton
             // 
@@ -646,25 +652,27 @@
             // settingsTab
             // 
             this.settingsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.settingsTab.Controls.Add(this.menuStrip1);
+            this.settingsTab.Controls.Add(this.fontSelectionBox);
+            this.settingsTab.Controls.Add(this.themeBox);
+            this.settingsTab.Controls.Add(this.menuStrip);
             this.settingsTab.Location = new System.Drawing.Point(4, 34);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(391, 812);
+            this.settingsTab.Size = new System.Drawing.Size(408, 812);
             this.settingsTab.TabIndex = 1;
             this.settingsTab.Text = "Settings";
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(50, 806);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(50, 806);
+            this.menuStrip.TabIndex = 0;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -699,6 +707,13 @@
             this.microsoftSansSerif12ptToolStripMenuItem.Text = "Microsoft Sans Serif, 12pt";
             this.microsoftSansSerif12ptToolStripMenuItem.Click += new System.EventHandler(this.microsoftSansSerif12ptToolStripMenuItem_Click);
             // 
+            // segoeUI12ptToolStripMenuItem
+            // 
+            this.segoeUI12ptToolStripMenuItem.Name = "segoeUI12ptToolStripMenuItem";
+            this.segoeUI12ptToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.segoeUI12ptToolStripMenuItem.Text = "Segoe UI Black, 12pt";
+            this.segoeUI12ptToolStripMenuItem.Click += new System.EventHandler(this.segoeUI12ptToolStripMenuItem_Click);
+            // 
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -708,42 +723,73 @@
             this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.colorToolStripMenuItem.Text = "Theme...";
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // segoeUI12ptToolStripMenuItem
-            // 
-            this.segoeUI12ptToolStripMenuItem.Name = "segoeUI12ptToolStripMenuItem";
-            this.segoeUI12ptToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.segoeUI12ptToolStripMenuItem.Text = "Segoe UI Black, 12pt";
-            this.segoeUI12ptToolStripMenuItem.Click += new System.EventHandler(this.segoeUI12ptToolStripMenuItem_Click);
-            // 
             // darkUIToolStripMenuItem
             // 
             this.darkUIToolStripMenuItem.Name = "darkUIToolStripMenuItem";
-            this.darkUIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.darkUIToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.darkUIToolStripMenuItem.Text = "Dark UI";
             this.darkUIToolStripMenuItem.Click += new System.EventHandler(this.darkUIToolStripMenuItem_Click);
             // 
             // lightUIToolStripMenuItem
             // 
             this.lightUIToolStripMenuItem.Name = "lightUIToolStripMenuItem";
-            this.lightUIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lightUIToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.lightUIToolStripMenuItem.Text = "Light UI";
             this.lightUIToolStripMenuItem.Click += new System.EventHandler(this.lightUIToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // themeLabel
+            // 
+            this.themeLabel.AutoSize = true;
+            this.themeLabel.Location = new System.Drawing.Point(37, 31);
+            this.themeLabel.Name = "themeLabel";
+            this.themeLabel.Size = new System.Drawing.Size(115, 20);
+            this.themeLabel.TabIndex = 1;
+            this.themeLabel.Text = "Current Theme";
+            // 
+            // themeBox
+            // 
+            this.themeBox.Controls.Add(this.themeLabel);
+            this.themeBox.Location = new System.Drawing.Point(56, 6);
+            this.themeBox.Name = "themeBox";
+            this.themeBox.Size = new System.Drawing.Size(349, 67);
+            this.themeBox.TabIndex = 2;
+            this.themeBox.TabStop = false;
+            this.themeBox.Text = "Current Theme";
+            // 
+            // fontSelectionBox
+            // 
+            this.fontSelectionBox.Controls.Add(this.fontSelectionLabel);
+            this.fontSelectionBox.Location = new System.Drawing.Point(56, 79);
+            this.fontSelectionBox.Name = "fontSelectionBox";
+            this.fontSelectionBox.Size = new System.Drawing.Size(349, 67);
+            this.fontSelectionBox.TabIndex = 3;
+            this.fontSelectionBox.TabStop = false;
+            this.fontSelectionBox.Text = "Current Font";
+            // 
+            // fontSelectionLabel
+            // 
+            this.fontSelectionLabel.AutoSize = true;
+            this.fontSelectionLabel.Location = new System.Drawing.Point(37, 31);
+            this.fontSelectionLabel.Name = "fontSelectionLabel";
+            this.fontSelectionLabel.Size = new System.Drawing.Size(99, 20);
+            this.fontSelectionLabel.TabIndex = 1;
+            this.fontSelectionLabel.Text = "Current Font";
             // 
             // teslaSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(394, 741);
+            this.ClientSize = new System.Drawing.Size(414, 796);
             this.Controls.Add(this.tabMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "teslaSForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -767,8 +813,12 @@
             this.colourGroup.PerformLayout();
             this.settingsTab.ResumeLayout(false);
             this.settingsTab.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
+            this.themeBox.ResumeLayout(false);
+            this.themeBox.PerformLayout();
+            this.fontSelectionBox.ResumeLayout(false);
+            this.fontSelectionBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -821,17 +871,21 @@
         private System.Windows.Forms.Label solidPaintLabel;
         private System.Windows.Forms.Button maximizeButton;
         private System.Windows.Forms.Button buyButton;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.ToolStripMenuItem franklinGothic12ptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem microsoftSansSerif12ptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem segoeUI12ptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem darkUIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lightUIToolStripMenuItem;
+        private System.Windows.Forms.GroupBox themeBox;
+        private System.Windows.Forms.Label themeLabel;
+        private System.Windows.Forms.GroupBox fontSelectionBox;
+        private System.Windows.Forms.Label fontSelectionLabel;
     }
 }
 

@@ -28,6 +28,10 @@ namespace Sharp_Auto_Center
         private static decimal FOG_LAMPS                = 550m;
         private static decimal BASE_CAR_COST            = 78970m;
         private static decimal NONE                     = 0m;
+        private static Color DARK_BACKGROUND            = Color.FromArgb(64, 64, 64);
+        private static Color DARK_TEXT                  = Color.White;
+        private static Color LIGHT_BACKGROUND           = Color.FromArgb(220, 220, 220);
+        private static Color LIGHT_TEXT                 = Color.Black;
 
         // set adding variables
         private decimal total       = BASE_CAR_COST;
@@ -38,11 +42,15 @@ namespace Sharp_Auto_Center
         private decimal optionCost  = 0;
         private string formTheme = "darkUI";
 
+
         public teslaSForm()
         {
             InitializeComponent();
         }
         
+        /**
+         * Check which paint option has been selected and update costs shown to the user
+         */
         private void PaintButtons_CheckedChanged(object sender, EventArgs e)
         {
             if (solidPaintButton.Checked && this.paintCost > NONE-METAL_PAINT_COST)
@@ -60,7 +68,7 @@ namespace Sharp_Auto_Center
 
                 // Set solid paint price label
                 solidPaintLabel.Text        = NONE.ToString("C");
-                solidPaintLabel.ForeColor   = Color.White;
+                solidPaintLabel.ForeColor = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
 
                 // set metal paint price label
                 metalPaintLabel.Text        = METAL_PAINT_COST.ToString("C");
@@ -83,7 +91,7 @@ namespace Sharp_Auto_Center
 
                 // set metal paint price label
                 metalPaintLabel.Text        = NONE.ToString("C");
-                metalPaintLabel.ForeColor   = Color.White;
+                metalPaintLabel.ForeColor = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
 
                 this.paintCost = METAL_PAINT_COST;
             }
@@ -92,6 +100,9 @@ namespace Sharp_Auto_Center
             addToTotal();
         }
 
+        /**
+         * Checks which roof option has been selected and updates the costs shown to the user
+         */
         private void roofButtons_CheckedChanged(object sender, EventArgs e)
         {
             
@@ -106,7 +117,7 @@ namespace Sharp_Auto_Center
 
                 // Set solid paint price label
                 solidRoofLabel.Text         = NONE.ToString("C");
-                solidRoofLabel.ForeColor    = Color.White;
+                solidRoofLabel.ForeColor = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
 
                 // set metal paint price label
                 glassRoofLabel.Text         = (GLASS_ROOFTOP_COST).ToString("C");
@@ -128,7 +139,7 @@ namespace Sharp_Auto_Center
 
                 // set metal paint price label
                 glassRoofLabel.Text         = NONE.ToString("C");
-                glassRoofLabel.ForeColor    = Color.White;
+                glassRoofLabel.ForeColor    = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
             }
 
             // Add the  roof cost to the total
@@ -151,12 +162,14 @@ namespace Sharp_Auto_Center
         }
 
         
-
+        /**
+         * Sets form settings and initialises various settings for the form
+         */
         private void teslaSForm_Load(object sender, EventArgs e)
         {
             // Set window size
-            //tabMenu.Size    = new Size(420,415);
-            //this.Size       = new Size(420,450);
+            tabMenu.Size    = new Size(420,415);
+            this.Size       = new Size(420,450);
 
             // Set total box to base car cost
             totalBox.Text   = total.ToString("C");
@@ -182,6 +195,21 @@ namespace Sharp_Auto_Center
 
             // Set colour options to initial option
             colourOptionBox.DataSource = colours(0);
+
+            // Set settings labels
+            checkThemeLabel();
+            checkFontLabel();
+
+            // Set colours of form based on starting theme
+            if (formTheme == "darkUI")
+            {
+                changeColors(DARK_BACKGROUND, DARK_TEXT);
+            }
+            else
+            {
+                changeColors(LIGHT_BACKGROUND,LIGHT_TEXT);
+            }
+
         }
 
         /**
@@ -209,7 +237,7 @@ namespace Sharp_Auto_Center
 
                 // Set standard wheel label colour and price
                 Standard19Label.Text        = NONE.ToString("C");
-                Standard19Label.ForeColor   = Color.White;
+                Standard19Label.ForeColor = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
 
                 // set 19" wheel label colour and price 
                 cyclone19Label.Text         = WHEEL_19_CYCLONE_COST.ToString("C");
@@ -235,7 +263,7 @@ namespace Sharp_Auto_Center
 
                 // set 19" wheel label colour and price 
                 cyclone19Label.Text         = NONE.ToString("C");
-                cyclone19Label.ForeColor    = Color.White;
+                cyclone19Label.ForeColor    = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
 
                 // set 21" wheel label colour and price
                 cyclone21Label.Text         = (WHEEL_21_CYCLONE_COST - WHEEL_19_CYCLONE_COST).ToString("C");
@@ -262,7 +290,7 @@ namespace Sharp_Auto_Center
 
                 // set 21" wheel label colour and price
                 cyclone21Label.Text         = NONE.ToString("C");
-                cyclone21Label.ForeColor    = Color.White;
+                cyclone21Label.ForeColor    = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
 
                 this.wheelCost = WHEEL_21_CYCLONE_COST;
             }
@@ -282,7 +310,7 @@ namespace Sharp_Auto_Center
 
                 // Set base battery label price and font colour
                 baseBatteryLabel.Text       = NONE.ToString("C");
-                baseBatteryLabel.ForeColor  = Color.White;
+                baseBatteryLabel.ForeColor  = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
 
                 // Set upgraded battery label price and font colour
                 upgradeBatteryLabel.Text        = UPGRADE_BATTERY_COST.ToString("C");
@@ -308,7 +336,7 @@ namespace Sharp_Auto_Center
 
                 // Set upgraded battery label price and font colour
                 upgradeBatteryLabel.Text        = NONE.ToString("C");
-                upgradeBatteryLabel.ForeColor   = Color.White;
+                upgradeBatteryLabel.ForeColor   = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
 
                 // Set performance battery label price and font colour
                 performanceBatteryLabel.Text        = (PERFORMANCE_BATTERY_COST - UPGRADE_BATTERY_COST).ToString("C");
@@ -325,16 +353,16 @@ namespace Sharp_Auto_Center
                 }
 
                 // Set base battery label price and font colour
-                baseBatteryLabel.Text = (NONE - PERFORMANCE_BATTERY_COST).ToString("C");
-                baseBatteryLabel.ForeColor = Color.Red;
+                baseBatteryLabel.Text       = (NONE - PERFORMANCE_BATTERY_COST).ToString("C");
+                baseBatteryLabel.ForeColor  = Color.Red;
 
                 // Set upgraded battery label price and font colour
-                upgradeBatteryLabel.Text = (UPGRADE_BATTERY_COST - PERFORMANCE_BATTERY_COST).ToString("C");
-                upgradeBatteryLabel.ForeColor = Color.Red;
+                upgradeBatteryLabel.Text        = (UPGRADE_BATTERY_COST - PERFORMANCE_BATTERY_COST).ToString("C");
+                upgradeBatteryLabel.ForeColor   = Color.Red;
 
                 // Set performance battery label price and font colour
-                performanceBatteryLabel.Text = NONE.ToString("C");
-                performanceBatteryLabel.ForeColor = Color.White;
+                performanceBatteryLabel.Text        = NONE.ToString("C");
+                performanceBatteryLabel.ForeColor   = formTheme == "darkUI" ? DARK_TEXT : LIGHT_TEXT;
 
                 this.batteryCost = PERFORMANCE_BATTERY_COST;
             }
@@ -342,14 +370,17 @@ namespace Sharp_Auto_Center
             addToTotal();
         }
 
+        /**
+         * Check if the high power option has been selected, update costs for the user
+         */
         private void highPowerBox_CheckedChanged(object sender, EventArgs e)
         {
             // Check state of the button
             if (highPowerBox.Checked)
             {
                 // set label price and colour
-                highPowerLabel.Text = (NONE - HIGH_POWER_CHARGER).ToString("C");
-                highPowerLabel.ForeColor = Color.Red;
+                highPowerLabel.Text         = (NONE - HIGH_POWER_CHARGER).ToString("C");
+                highPowerLabel.ForeColor    = Color.Red;
 
                 // add cost to options
                 this.optionCost += HIGH_POWER_CHARGER;
@@ -357,8 +388,8 @@ namespace Sharp_Auto_Center
             else
             {
                 // set label price and colour
-                highPowerLabel.Text = HIGH_POWER_CHARGER.ToString("C");
-                highPowerLabel.ForeColor = Color.PaleGreen;
+                highPowerLabel.Text         = HIGH_POWER_CHARGER.ToString("C");
+                highPowerLabel.ForeColor    = Color.PaleGreen;
 
                 // add cost to options
                 this.optionCost -= HIGH_POWER_CHARGER;
@@ -367,13 +398,16 @@ namespace Sharp_Auto_Center
             addToTotal();
         }
 
+        /**
+         * Check if the tech upgrade option has been selected, update costs for the user
+         */
         private void techBox_CheckedChanged(object sender, EventArgs e)
         {
             // Check state of the button
             if (techBox.Checked)
             {
                 // set label price and colour
-                techLabel.Text = (NONE - TECH_PACKAGE).ToString("C");
+                techLabel.Text      = (NONE - TECH_PACKAGE).ToString("C");
                 techLabel.ForeColor = Color.Red;
 
                 // add cost to options
@@ -382,7 +416,7 @@ namespace Sharp_Auto_Center
             else
             {
                 // set label price and colour
-                techLabel.Text = TECH_PACKAGE.ToString("C");
+                techLabel.Text      = TECH_PACKAGE.ToString("C");
                 techLabel.ForeColor = Color.PaleGreen;
 
                 // add cost to options
@@ -392,14 +426,17 @@ namespace Sharp_Auto_Center
             addToTotal();
         }
 
+        /**
+         * Check if the smart suspension option has been selected, update costs for the user
+         */
         private void smartSuspensionBox_CheckedChanged(object sender, EventArgs e)
         {
             // Check state of the button
             if (smartSuspensionBox.Checked)
             {
                 // set label price and colour
-                smartSuspensionLabel.Text = (NONE - SMART_SUSPENSION).ToString("C");
-                smartSuspensionLabel.ForeColor = Color.Red;
+                smartSuspensionLabel.Text       = (NONE - SMART_SUSPENSION).ToString("C");
+                smartSuspensionLabel.ForeColor  = Color.Red;
 
                 // add cost to options
                 this.optionCost += TECH_PACKAGE;
@@ -407,8 +444,8 @@ namespace Sharp_Auto_Center
             else
             {
                 // set label price and colour
-                smartSuspensionLabel.Text = SMART_SUSPENSION.ToString("C");
-                smartSuspensionLabel.ForeColor = Color.PaleGreen;
+                smartSuspensionLabel.Text       = SMART_SUSPENSION.ToString("C");
+                smartSuspensionLabel.ForeColor  = Color.PaleGreen;
 
                 // add cost to options
                 this.optionCost -= SMART_SUSPENSION;
@@ -417,14 +454,17 @@ namespace Sharp_Auto_Center
             addToTotal();
         }
 
+        /**
+         * Check if the fog light option has been selected, update costs for the user
+         */
         private void fogBox_CheckedChanged(object sender, EventArgs e)
         {
             // Check state of the button
             if (fogBox.Checked)
             {
                 // set label price and colour
-                fogLabel.Text = (NONE - FOG_LAMPS).ToString("C");
-                fogLabel.ForeColor = Color.Red;
+                fogLabel.Text       = (NONE - FOG_LAMPS).ToString("C");
+                fogLabel.ForeColor  = Color.Red;
 
                 // add cost to options
                 this.optionCost += FOG_LAMPS;
@@ -432,8 +472,8 @@ namespace Sharp_Auto_Center
             else
             {
                 // set label price and colour
-                fogLabel.Text = FOG_LAMPS.ToString("C");
-                fogLabel.ForeColor = Color.PaleGreen;
+                fogLabel.Text       = FOG_LAMPS.ToString("C");
+                fogLabel.ForeColor  = Color.PaleGreen;
 
                 // add cost to options
                 this.optionCost -= FOG_LAMPS;
@@ -458,7 +498,10 @@ namespace Sharp_Auto_Center
             fogBox.Checked              = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /**
+         * Reset all options to default, and update costs accordingly
+         */
+        private void resetButton_Click(object sender, EventArgs e)
         {
             // Set all options to maximum
             solidPaintButton.PerformClick();
@@ -468,28 +511,40 @@ namespace Sharp_Auto_Center
             fabricSeatButton.PerformClick();
 
             // turn checkboxes on to call function
-            highPowerBox.Checked = false;
-            techBox.Checked = false;
-            smartSuspensionBox.Checked = false;
-            fogBox.Checked = false;
+            highPowerBox.Checked        = false;
+            techBox.Checked             = false;
+            smartSuspensionBox.Checked  = false;
+            fogBox.Checked              = false;
         }
         
+        /**
+         * Set fonts on the form to Franklin Gothic
+         */
         private void franklinGothic12ptToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // change the font
             changeFont(new Font("Forte",12));
+            checkFontLabel();
         }
 
+        /**
+         * Set fonts on the form to Microsoft Sans Serif
+         */
         private void microsoftSansSerif12ptToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // change the font
             changeFont(new Font("Microsoft Sans Serif", 12));
+            checkFontLabel();
         }
 
+        /**
+         * Set fonts on the form to Segoe UI Black
+         */
         private void segoeUI12ptToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // change the font
             changeFont(new Font("Segoe UI Black", 12));
+            checkFontLabel();
         }
 
         /**
@@ -536,70 +591,105 @@ namespace Sharp_Auto_Center
             smartSuspensionLabel.Font       = fontFamilyName;
             fogBox.Font                     = fontFamilyName;
             fogLabel.Font                   = fontFamilyName;
+            resetButton.Font                = fontFamilyName;
+            maximizeButton.Font             = fontFamilyName;
+            buyButton.Font                  = fontFamilyName;
+            themeBox.Font                   = fontFamilyName;
+            themeLabel.Font                 = fontFamilyName;
+            fontSelectionBox.Font           = fontFamilyName;
+            fontSelectionLabel.Font         = fontFamilyName;
         }
 
-        private void changeFontColor(Color fontColor)
+        /**
+         * @param fontColor Color object to be set for text
+         * @param x         dummy Object to be able to call the button functions
+         * @param y         dummy EventArgs to be able to call the button functions
+         */
+        private void changeFontColor(Color fontColor, Object x, EventArgs y)
         {
+            // Change button and group text colours
             solidPaintButton.ForeColor          = fontColor;
-            solidPaintLabel.ForeColor           = fontColor;
             metallicPaintButton.ForeColor       = fontColor;
-            metalPaintLabel.ForeColor           = fontColor;
             colourGroup.ForeColor               = fontColor;
             colourOptionBox.ForeColor           = fontColor;
             roofGroup.ForeColor                 = fontColor;
             solidRoofButton.ForeColor           = fontColor;
-            solidRoofLabel.ForeColor            = fontColor;
             glassRoofButton.ForeColor           = fontColor;
-            glassRoofLabel.ForeColor            = fontColor;
             wheelGroup.ForeColor                = fontColor;
             Standard19Button.ForeColor          = fontColor;
-            Standard19Label.ForeColor           = fontColor;
-            cyclone19Label.ForeColor            = fontColor;
             cyclone19Button.ForeColor           = fontColor;
-            cyclone21Label.ForeColor            = fontColor;
             cyclone21Button.ForeColor           = fontColor;
             baseBatteryButton.ForeColor         = fontColor;
-            baseBatteryLabel.ForeColor          = fontColor;
             performanceBatteryButton.ForeColor  = fontColor;
-            performanceBatteryLabel.ForeColor   = fontColor;
             upgradeBatteryButton.ForeColor      = fontColor;
-            upgradeBatteryLabel.ForeColor       = fontColor;
             batteryGroup.ForeColor              = fontColor;
             interiorOptionBox.ForeColor         = fontColor;
             fabricSeatButton.ForeColor          = fontColor;
-            fabricSeatLabel.ForeColor           = fontColor;
             leatherSeatButton.ForeColor         = fontColor;
-            leatherSeatLabel.ForeColor          = fontColor;
             extraOptionsBox.ForeColor           = fontColor;
             highPowerBox.ForeColor              = fontColor;
-            highPowerLabel.ForeColor            = fontColor;
             techBox.ForeColor                   = fontColor;
-            techLabel.ForeColor                 = fontColor;
             smartSuspensionBox.ForeColor        = fontColor;
-            smartSuspensionLabel.ForeColor      = fontColor;
             fogBox.ForeColor                    = fontColor;
-            fogLabel.ForeColor                  = fontColor;
+            themeBox.ForeColor                  = fontColor;
+            fontSelectionBox.ForeColor          = fontColor;
+
+            // Run through label colours
+            PaintButtons_CheckedChanged(x,y);
+            roofButtons_CheckedChanged(x,y);
+            WheelButton_CheckedChanged(x, y);
+            BatteryButton_CheckedChanged(x, y);
+            themeLabel.ForeColor            = fontColor;
+            fontSelectionLabel.ForeColor    = fontColor;
+            fabricSeatLabel.ForeColor       = fontColor;
+            leatherSeatLabel.ForeColor      = fontColor;
         }
 
+        /**
+         * Sets forms theme to the dark theme
+         */
         private void darkUIToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.formTheme = "darkUI";
-            changeColors(Color.FromArgb(64,64,64), Color.White);
-            changeFontColor(Color.White);
+            checkThemeLabel();
+            changeColors(DARK_BACKGROUND, DARK_TEXT);
+            changeFontColor(DARK_TEXT, sender, e);
         }
 
+        /**
+         * Sets forms theme to the light theme
+         */
         private void lightUIToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.formTheme = "lightUI";
-            changeColors(Color.FromArgb(220, 220, 220), Color.Black);
-            changeFontColor(Color.Black);
+            checkThemeLabel();
+            changeColors(LIGHT_BACKGROUND, LIGHT_TEXT);
+            changeFontColor(LIGHT_TEXT, sender, e);
         }
 
+        /**
+         * Set the label text for the current theme in the settings tab, to the currently selected theme
+         */
+        private void checkThemeLabel()
+        {
+            themeLabel.Text = formTheme == "darkUI" ? "Dark UI Theme" : "Light UI Theme";
+        }
+
+        /**
+         * Set the label text for the current font in the settings tab, to the currently selected font
+         */
+        private void checkFontLabel()
+        {
+            fontSelectionLabel.Text = fontSelectionLabel.Font.Name;
+        }
+
+        /**
+         * change the form background colour to the specified colour
+         */
         private void changeColors(Color formBackground, Color textColor)
         {
-            designTab.BackColor = formBackground;
-            settingsTab.BackColor = formBackground;
+            designTab.BackColor     = formBackground;
+            settingsTab.BackColor   = formBackground;
         }
-
     }
 }
