@@ -30,6 +30,9 @@
         {
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.designTab = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.maximizeButton = new System.Windows.Forms.Button();
+            this.buyButton = new System.Windows.Forms.Button();
             this.totalBox = new System.Windows.Forms.TextBox();
             this.totalCostLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -72,16 +75,13 @@
             this.solidPaintButton = new System.Windows.Forms.RadioButton();
             this.colourOptionBox = new System.Windows.Forms.ListBox();
             this.settingsTab = new System.Windows.Forms.TabPage();
-            this.buyButton = new System.Windows.Forms.Button();
-            this.maximizeButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.franklinGothic12ptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.microsoftSansSerif12ptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -130,6 +130,35 @@
             this.designTab.Size = new System.Drawing.Size(391, 812);
             this.designTab.TabIndex = 0;
             this.designTab.Text = "Design";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(18, 711);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 29);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "&Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // maximizeButton
+            // 
+            this.maximizeButton.Location = new System.Drawing.Point(121, 711);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.Size = new System.Drawing.Size(151, 29);
+            this.maximizeButton.TabIndex = 15;
+            this.maximizeButton.Text = "&Maximize Options";
+            this.maximizeButton.UseVisualStyleBackColor = true;
+            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
+            // 
+            // buyButton
+            // 
+            this.buyButton.Location = new System.Drawing.Point(300, 711);
+            this.buyButton.Name = "buyButton";
+            this.buyButton.Size = new System.Drawing.Size(75, 29);
+            this.buyButton.TabIndex = 14;
+            this.buyButton.Text = "&Buy Car";
+            this.buyButton.UseVisualStyleBackColor = true;
             // 
             // totalBox
             // 
@@ -623,25 +652,6 @@
             this.settingsTab.TabIndex = 1;
             this.settingsTab.Text = "Settings";
             // 
-            // buyButton
-            // 
-            this.buyButton.Location = new System.Drawing.Point(300, 711);
-            this.buyButton.Name = "buyButton";
-            this.buyButton.Size = new System.Drawing.Size(75, 29);
-            this.buyButton.TabIndex = 14;
-            this.buyButton.Text = "&Buy Car";
-            this.buyButton.UseVisualStyleBackColor = true;
-            // 
-            // maximizeButton
-            // 
-            this.maximizeButton.Location = new System.Drawing.Point(121, 711);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.Size = new System.Drawing.Size(151, 29);
-            this.maximizeButton.TabIndex = 15;
-            this.maximizeButton.Text = "&Maximize Options";
-            this.maximizeButton.UseVisualStyleBackColor = true;
-            this.maximizeButton.Click += new System.EventHandler(this.maximizeButton_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -650,7 +660,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 3);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(50, 806);
+            this.menuStrip1.Size = new System.Drawing.Size(98, 806);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -660,14 +670,8 @@
             this.fontToolStripMenuItem,
             this.colorToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
             this.fileToolStripMenuItem.Text = "File";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
-            this.helpToolStripMenuItem.Text = "Help";
             // 
             // fontToolStripMenuItem
             // 
@@ -677,29 +681,13 @@
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
             this.fontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fontToolStripMenuItem.Text = "Font...";
-            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
-            // 
-            // colorToolStripMenuItem
-            // 
-            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.colorToolStripMenuItem.Text = "Color...";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(18, 711);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "&Reset";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // franklinGothic12ptToolStripMenuItem
             // 
             this.franklinGothic12ptToolStripMenuItem.Name = "franklinGothic12ptToolStripMenuItem";
             this.franklinGothic12ptToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.franklinGothic12ptToolStripMenuItem.Text = "Franklin Gothic, 12pt";
+            this.franklinGothic12ptToolStripMenuItem.Click += new System.EventHandler(this.franklinGothic12ptToolStripMenuItem_Click);
             // 
             // microsoftSansSerif12ptToolStripMenuItem
             // 
@@ -707,12 +695,24 @@
             this.microsoftSansSerif12ptToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.microsoftSansSerif12ptToolStripMenuItem.Text = "Microsoft Sans Serif, 12pt";
             // 
+            // colorToolStripMenuItem
+            // 
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.colorToolStripMenuItem.Text = "Color...";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
             // teslaSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(394, 847);
+            this.ClientSize = new System.Drawing.Size(394, 741);
             this.Controls.Add(this.tabMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;

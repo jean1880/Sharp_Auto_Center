@@ -471,10 +471,14 @@ namespace Sharp_Auto_Center
             smartSuspensionBox.Checked = false;
             fogBox.Checked = false;
         }
-
-        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        private void franklinGothic12ptToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            changeFont("Franklin Gothic","12pt");
+        }
 
+        private void changeFont(string fontFamilyName, string fontSize)
+        {
         }
     }
 }
