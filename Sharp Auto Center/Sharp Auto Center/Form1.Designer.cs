@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teslaSForm));
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.designTab = new System.Windows.Forms.TabPage();
             this.resetButton = new System.Windows.Forms.Button();
@@ -75,6 +76,10 @@
             this.solidPaintButton = new System.Windows.Forms.RadioButton();
             this.colourOptionBox = new System.Windows.Forms.ListBox();
             this.settingsTab = new System.Windows.Forms.TabPage();
+            this.fontSelectionBox = new System.Windows.Forms.GroupBox();
+            this.fontSelectionLabel = new System.Windows.Forms.Label();
+            this.themeBox = new System.Windows.Forms.GroupBox();
+            this.themeLabel = new System.Windows.Forms.Label();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,10 +90,6 @@
             this.darkUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.themeLabel = new System.Windows.Forms.Label();
-            this.themeBox = new System.Windows.Forms.GroupBox();
-            this.fontSelectionBox = new System.Windows.Forms.GroupBox();
-            this.fontSelectionLabel = new System.Windows.Forms.Label();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
             this.batteryGroup.SuspendLayout();
@@ -98,9 +99,9 @@
             this.roofGroup.SuspendLayout();
             this.colourGroup.SuspendLayout();
             this.settingsTab.SuspendLayout();
-            this.menuStrip.SuspendLayout();
-            this.themeBox.SuspendLayout();
             this.fontSelectionBox.SuspendLayout();
+            this.themeBox.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -136,7 +137,7 @@
             this.designTab.Location = new System.Drawing.Point(4, 34);
             this.designTab.Name = "designTab";
             this.designTab.Padding = new System.Windows.Forms.Padding(3);
-            this.designTab.Size = new System.Drawing.Size(391, 812);
+            this.designTab.Size = new System.Drawing.Size(408, 812);
             this.designTab.TabIndex = 0;
             this.designTab.Text = "Design";
             // 
@@ -662,6 +663,44 @@
             this.settingsTab.TabIndex = 1;
             this.settingsTab.Text = "Settings";
             // 
+            // fontSelectionBox
+            // 
+            this.fontSelectionBox.Controls.Add(this.fontSelectionLabel);
+            this.fontSelectionBox.Location = new System.Drawing.Point(56, 79);
+            this.fontSelectionBox.Name = "fontSelectionBox";
+            this.fontSelectionBox.Size = new System.Drawing.Size(349, 67);
+            this.fontSelectionBox.TabIndex = 3;
+            this.fontSelectionBox.TabStop = false;
+            this.fontSelectionBox.Text = "Current Font";
+            // 
+            // fontSelectionLabel
+            // 
+            this.fontSelectionLabel.AutoSize = true;
+            this.fontSelectionLabel.Location = new System.Drawing.Point(37, 31);
+            this.fontSelectionLabel.Name = "fontSelectionLabel";
+            this.fontSelectionLabel.Size = new System.Drawing.Size(99, 20);
+            this.fontSelectionLabel.TabIndex = 1;
+            this.fontSelectionLabel.Text = "Current Font";
+            // 
+            // themeBox
+            // 
+            this.themeBox.Controls.Add(this.themeLabel);
+            this.themeBox.Location = new System.Drawing.Point(56, 6);
+            this.themeBox.Name = "themeBox";
+            this.themeBox.Size = new System.Drawing.Size(349, 67);
+            this.themeBox.TabIndex = 2;
+            this.themeBox.TabStop = false;
+            this.themeBox.Text = "Current Theme";
+            // 
+            // themeLabel
+            // 
+            this.themeLabel.AutoSize = true;
+            this.themeLabel.Location = new System.Drawing.Point(37, 31);
+            this.themeLabel.Name = "themeLabel";
+            this.themeLabel.Size = new System.Drawing.Size(115, 20);
+            this.themeLabel.TabIndex = 1;
+            this.themeLabel.Text = "Current Theme";
+            // 
             // menuStrip
             // 
             this.menuStrip.Dock = System.Windows.Forms.DockStyle.Left;
@@ -680,7 +719,7 @@
             this.fontToolStripMenuItem,
             this.colorToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // fontToolStripMenuItem
@@ -690,7 +729,7 @@
             this.microsoftSansSerif12ptToolStripMenuItem,
             this.segoeUI12ptToolStripMenuItem});
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.fontToolStripMenuItem.Text = "Font...";
             // 
             // franklinGothic12ptToolStripMenuItem
@@ -720,7 +759,7 @@
             this.darkUIToolStripMenuItem,
             this.lightUIToolStripMenuItem});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.colorToolStripMenuItem.Text = "Theme...";
             // 
             // darkUIToolStripMenuItem
@@ -740,55 +779,18 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // themeLabel
-            // 
-            this.themeLabel.AutoSize = true;
-            this.themeLabel.Location = new System.Drawing.Point(37, 31);
-            this.themeLabel.Name = "themeLabel";
-            this.themeLabel.Size = new System.Drawing.Size(115, 20);
-            this.themeLabel.TabIndex = 1;
-            this.themeLabel.Text = "Current Theme";
-            // 
-            // themeBox
-            // 
-            this.themeBox.Controls.Add(this.themeLabel);
-            this.themeBox.Location = new System.Drawing.Point(56, 6);
-            this.themeBox.Name = "themeBox";
-            this.themeBox.Size = new System.Drawing.Size(349, 67);
-            this.themeBox.TabIndex = 2;
-            this.themeBox.TabStop = false;
-            this.themeBox.Text = "Current Theme";
-            // 
-            // fontSelectionBox
-            // 
-            this.fontSelectionBox.Controls.Add(this.fontSelectionLabel);
-            this.fontSelectionBox.Location = new System.Drawing.Point(56, 79);
-            this.fontSelectionBox.Name = "fontSelectionBox";
-            this.fontSelectionBox.Size = new System.Drawing.Size(349, 67);
-            this.fontSelectionBox.TabIndex = 3;
-            this.fontSelectionBox.TabStop = false;
-            this.fontSelectionBox.Text = "Current Font";
-            // 
-            // fontSelectionLabel
-            // 
-            this.fontSelectionLabel.AutoSize = true;
-            this.fontSelectionLabel.Location = new System.Drawing.Point(37, 31);
-            this.fontSelectionLabel.Name = "fontSelectionLabel";
-            this.fontSelectionLabel.Size = new System.Drawing.Size(99, 20);
-            this.fontSelectionLabel.TabIndex = 1;
-            this.fontSelectionLabel.Text = "Current Font";
             // 
             // teslaSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(414, 796);
+            this.ClientSize = new System.Drawing.Size(414, 741);
             this.Controls.Add(this.tabMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "teslaSForm";
@@ -813,12 +815,12 @@
             this.colourGroup.PerformLayout();
             this.settingsTab.ResumeLayout(false);
             this.settingsTab.PerformLayout();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            this.themeBox.ResumeLayout(false);
-            this.themeBox.PerformLayout();
             this.fontSelectionBox.ResumeLayout(false);
             this.fontSelectionBox.PerformLayout();
+            this.themeBox.ResumeLayout(false);
+            this.themeBox.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
 
         }

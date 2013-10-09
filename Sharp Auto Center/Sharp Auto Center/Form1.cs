@@ -35,12 +35,16 @@ namespace Sharp_Auto_Center
 
         // set adding variables
         private decimal total       = BASE_CAR_COST;
-        private decimal roofCost    = 0;
-        private decimal paintCost   = 0;
-        private decimal wheelCost   = 0;
-        private decimal batteryCost = 0;
-        private decimal optionCost  = 0;
-        private string formTheme = "darkUI";
+        private decimal roofCost    = 0m;
+        private decimal paintCost   = 0m;
+        private decimal wheelCost   = 0m;
+        private decimal batteryCost = 0m;
+        private decimal optionsCost = 0m;
+        private decimal highPwrPck  = 0m;
+        private decimal smartSpns   = 0m;
+        private decimal techPkg     = 0m;
+        private decimal fogLmps     = 0m;
+        private string formTheme    = "darkUI";
 
 
         public teslaSForm()
@@ -97,7 +101,7 @@ namespace Sharp_Auto_Center
             }
 
             // add the paint cost to the total
-            addToTotal();
+            calculateTotal();
         }
 
         /**
@@ -143,7 +147,7 @@ namespace Sharp_Auto_Center
             }
 
             // Add the  roof cost to the total
-            addToTotal();
+            calculateTotal();
         }
 
         /**
@@ -168,7 +172,7 @@ namespace Sharp_Auto_Center
         private void teslaSForm_Load(object sender, EventArgs e)
         {
             // Set window size
-            tabMenu.Size    = new Size(420,415);
+            tabMenu.Size    = new Size(410,415);
             this.Size       = new Size(420,450);
 
             // Set total box to base car cost
@@ -212,13 +216,18 @@ namespace Sharp_Auto_Center
 
         }
 
+        private void calculateOptions()
+        {
+            this.optionsCost = this.smartSpns + this.highPwrPck + this.fogLmps + this.techPkg;
+        }
+
         /**
          * Adds the cost of an item to the total
          */
-        private void addToTotal()
+        private void calculateTotal()
         {
             // Add cost to total
-            this.total = this.wheelCost + this.roofCost + this.paintCost + this.batteryCost + this.optionCost + BASE_CAR_COST;
+            this.total = this.wheelCost + this.roofCost + this.paintCost + this.batteryCost + this.optionsCost + BASE_CAR_COST;
 
             // assign total to total text box
             totalBox.Text = total.ToString("C");
@@ -295,7 +304,7 @@ namespace Sharp_Auto_Center
                 this.wheelCost = WHEEL_21_CYCLONE_COST;
             }
 
-            addToTotal();
+            calculateTotal();
         }
 
         private void BatteryButton_CheckedChanged(object sender, EventArgs e)
@@ -367,7 +376,7 @@ namespace Sharp_Auto_Center
                 this.batteryCost = PERFORMANCE_BATTERY_COST;
             }
 
-            addToTotal();
+            calculateTotal();
         }
 
         /**
@@ -383,7 +392,7 @@ namespace Sharp_Auto_Center
                 highPowerLabel.ForeColor    = Color.Red;
 
                 // add cost to options
-                this.optionCost += HIGH_POWER_CHARGER;
+                this.highPwrPck = HIGH_POWER_CHARGER;
             }
             else
             {
@@ -392,10 +401,11 @@ namespace Sharp_Auto_Center
                 highPowerLabel.ForeColor    = Color.PaleGreen;
 
                 // add cost to options
-                this.optionCost -= HIGH_POWER_CHARGER;
+                this.highPwrPck = NONE;
             }
 
-            addToTotal();
+            calculateOptions();
+            calculateTotal();
         }
 
         /**
@@ -411,7 +421,7 @@ namespace Sharp_Auto_Center
                 techLabel.ForeColor = Color.Red;
 
                 // add cost to options
-                this.optionCost += TECH_PACKAGE;
+                this.techPkg = TECH_PACKAGE;
             }
             else
             {
@@ -420,10 +430,11 @@ namespace Sharp_Auto_Center
                 techLabel.ForeColor = Color.PaleGreen;
 
                 // add cost to options
-                this.optionCost -= TECH_PACKAGE;
+                this.techPkg = NONE;
             }
 
-            addToTotal();
+            calculateOptions();
+            calculateTotal();
         }
 
         /**
@@ -439,7 +450,7 @@ namespace Sharp_Auto_Center
                 smartSuspensionLabel.ForeColor  = Color.Red;
 
                 // add cost to options
-                this.optionCost += TECH_PACKAGE;
+                this.smartSpns = SMART_SUSPENSION;
             }
             else
             {
@@ -448,10 +459,11 @@ namespace Sharp_Auto_Center
                 smartSuspensionLabel.ForeColor  = Color.PaleGreen;
 
                 // add cost to options
-                this.optionCost -= SMART_SUSPENSION;
+                this.smartSpns = NONE;
             }
 
-            addToTotal();
+            calculateOptions();
+            calculateTotal();
         }
 
         /**
@@ -467,7 +479,7 @@ namespace Sharp_Auto_Center
                 fogLabel.ForeColor  = Color.Red;
 
                 // add cost to options
-                this.optionCost += FOG_LAMPS;
+                this.fogLmps = FOG_LAMPS;
             }
             else
             {
@@ -476,10 +488,11 @@ namespace Sharp_Auto_Center
                 fogLabel.ForeColor  = Color.PaleGreen;
 
                 // add cost to options
-                this.optionCost -= FOG_LAMPS;
+                this.fogLmps = NONE;
             }
 
-            addToTotal();
+            calculateOptions();
+            calculateTotal();
         }
 
         private void maximizeButton_Click(object sender, EventArgs e)
