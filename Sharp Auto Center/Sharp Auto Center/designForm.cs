@@ -757,6 +757,9 @@ namespace Sharp_Auto_Center
             this.Close();
         }
 
+        /**
+         * Catch closing event and ensure application fully exits
+         */
         private void teslaSForm_Close(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
