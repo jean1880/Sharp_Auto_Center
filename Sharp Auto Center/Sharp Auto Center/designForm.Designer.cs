@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teslaSForm));
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.designTab = new System.Windows.Forms.TabPage();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.resetButton = new System.Windows.Forms.Button();
             this.maximizeButton = new System.Windows.Forms.Button();
             this.buyButton = new System.Windows.Forms.Button();
@@ -89,12 +91,11 @@
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.titleLabel = new System.Windows.Forms.Label();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.batteryGroup.SuspendLayout();
             this.extraOptionsBox.SuspendLayout();
             this.interiorOptionBox.SuspendLayout();
@@ -105,7 +106,6 @@
             this.fontSelectionBox.SuspendLayout();
             this.themeBox.SuspendLayout();
             this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -146,6 +146,26 @@
             this.designTab.Size = new System.Drawing.Size(408, 812);
             this.designTab.TabIndex = 0;
             this.designTab.Text = "Design";
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(171, 18);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(170, 29);
+            this.titleLabel.TabIndex = 18;
+            this.titleLabel.Text = "Tesla Model S";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sharp_Auto_Center.Properties.Resources.tesla_sLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // resetButton
             // 
@@ -737,7 +757,7 @@
             this.microsoftSansSerif12ptToolStripMenuItem,
             this.segoeUI12ptToolStripMenuItem});
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.fontToolStripMenuItem.Text = "Font...";
             // 
             // franklinGothic12ptToolStripMenuItem
@@ -767,7 +787,7 @@
             this.darkUIToolStripMenuItem,
             this.lightUIToolStripMenuItem});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.colorToolStripMenuItem.Text = "Theme...";
             // 
             // darkUIToolStripMenuItem
@@ -784,6 +804,14 @@
             this.lightUIToolStripMenuItem.Text = "Light UI";
             this.lightUIToolStripMenuItem.Click += new System.EventHandler(this.lightUIToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
@@ -791,41 +819,13 @@
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(171, 18);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(170, 29);
-            this.titleLabel.TabIndex = 18;
-            this.titleLabel.Text = "Tesla Model S";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Sharp_Auto_Center.Properties.Resources.tesla_sLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
             // teslaSForm
             // 
             this.AcceptButton = this.buyButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(414, 886);
+            this.ClientSize = new System.Drawing.Size(414, 741);
             this.Controls.Add(this.tabMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -835,10 +835,12 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sharp Auto Centre";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.teslaSForm_Close);
             this.Load += new System.EventHandler(this.teslaSForm_Load);
             this.tabMenu.ResumeLayout(false);
             this.designTab.ResumeLayout(false);
             this.designTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.batteryGroup.ResumeLayout(false);
             this.batteryGroup.PerformLayout();
             this.extraOptionsBox.ResumeLayout(false);
@@ -859,7 +861,6 @@
             this.themeBox.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

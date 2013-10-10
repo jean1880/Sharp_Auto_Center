@@ -29,17 +29,36 @@ namespace Sharp_Auto_Center
          * Constructor of the form, rewuires the subtotal to output the results to the user
          * @param subTotal Subtotal to be used in order to calculate the total
          */
-        public purchaseForm(decimal subTotal)
+        public purchaseForm()
         {
-            this.subTotal = subTotal;
             InitializeComponent();
         }
 
+        public void setSubTotal(decimal subTotal)
+        {
+            this.subTotal = subTotal;
+        }
+
+                
         /**
-         * On load of the form, take the subtotal passed to the form and calculate the amount 
-         * of tax to be charged, as well as the total and display this to the user
+         * When the user cliccks the confirm button show a message box congratulating
+         * the user on their new purchase and close out the program
          */
-        private void purchaseForm_Load(object sender, EventArgs e)
+        private void buyButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Congratulations");
+            Application.Exit();
+        }
+
+        /**
+         * Catches closing event and close hidden form as well as current form
+         */
+        private void purchaseForm_Close(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void purchaseForm_Activate(object sender, EventArgs e)
         {
             // Set the subtotal box text to the value of subtotal, and display as currency
             subTotalBox.Text = subTotal.ToString("C");

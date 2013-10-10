@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(purchaseForm));
             this.subTotalLabel = new System.Windows.Forms.Label();
             this.subTotalBox = new System.Windows.Forms.TextBox();
             this.taxBox = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@
             this.totalLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buyButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,11 +115,22 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Tesla Model S";
             // 
+            // buyButton
+            // 
+            this.buyButton.Location = new System.Drawing.Point(183, 174);
+            this.buyButton.Name = "buyButton";
+            this.buyButton.Size = new System.Drawing.Size(75, 23);
+            this.buyButton.TabIndex = 8;
+            this.buyButton.Text = "Confirm";
+            this.buyButton.UseVisualStyleBackColor = true;
+            this.buyButton.Click += new System.EventHandler(this.buyButton_Click);
+            // 
             // purchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 183);
+            this.ClientSize = new System.Drawing.Size(292, 209);
+            this.Controls.Add(this.buyButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.totalLabel);
@@ -126,9 +139,12 @@
             this.Controls.Add(this.taxBox);
             this.Controls.Add(this.subTotalBox);
             this.Controls.Add(this.subTotalLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "purchaseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Purchase";
-            this.Load += new System.EventHandler(this.purchaseForm_Load);
+            this.Activated += new System.EventHandler(this.purchaseForm_Activate);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.purchaseForm_Close);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,5 +161,6 @@
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buyButton;
     }
 }

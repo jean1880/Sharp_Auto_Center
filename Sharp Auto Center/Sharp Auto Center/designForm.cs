@@ -20,6 +20,7 @@ namespace Sharp_Auto_Center
 {
     public partial class teslaSForm : Form
     {
+        private purchaseForm endForm = new purchaseForm();
         // set constants
         private static decimal METAL_PAINT_COST         = 800m;
         private static decimal GLASS_ROOFTOP_COST       = 2800m;
@@ -180,8 +181,9 @@ namespace Sharp_Auto_Center
         private void teslaSForm_Load(object sender, EventArgs e)
         {
             // Set window size
-            tabMenu.Size    = new Size(420,415);
+            tabMenu.Size    = new Size(410,415);
             this.Size       = new Size(420,450);
+
 
             // Set total box to base car cost
             totalBox.Text   = total.ToString("C");
@@ -732,9 +734,10 @@ namespace Sharp_Auto_Center
          */
         private void buyButton_Click(object sender, EventArgs e)
         {
-            purchaseForm endForm = new purchaseForm(total);
-            endForm.Show();
             this.Hide();
+            endForm.setSubTotal(total);
+            endForm.Show();
+            endForm.Activate();
         }
 
         /**
@@ -752,6 +755,11 @@ namespace Sharp_Auto_Center
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void teslaSForm_Close(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
