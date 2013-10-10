@@ -90,9 +90,9 @@
             this.darkUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
             this.batteryGroup.SuspendLayout();
@@ -773,14 +773,14 @@
             // darkUIToolStripMenuItem
             // 
             this.darkUIToolStripMenuItem.Name = "darkUIToolStripMenuItem";
-            this.darkUIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.darkUIToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.darkUIToolStripMenuItem.Text = "Dark UI";
             this.darkUIToolStripMenuItem.Click += new System.EventHandler(this.darkUIToolStripMenuItem_Click);
             // 
             // lightUIToolStripMenuItem
             // 
             this.lightUIToolStripMenuItem.Name = "lightUIToolStripMenuItem";
-            this.lightUIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lightUIToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.lightUIToolStripMenuItem.Text = "Light UI";
             this.lightUIToolStripMenuItem.Click += new System.EventHandler(this.lightUIToolStripMenuItem_Click);
             // 
@@ -790,16 +790,6 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Sharp_Auto_Center.Properties.Resources.tesla_sLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
             // 
             // titleLabel
             // 
@@ -817,9 +807,21 @@
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sharp_Auto_Center.Properties.Resources.tesla_sLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // teslaSForm
             // 
+            this.AcceptButton = this.buyButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));

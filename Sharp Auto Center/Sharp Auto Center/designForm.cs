@@ -680,7 +680,9 @@ namespace Sharp_Auto_Center
          */
         private void darkUIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.formTheme = "darkUI";
+            this.formTheme = "darkUI"; // store selected theme
+
+            // update current theme label and apply theme change
             checkThemeLabel();
             changeColors(DARK_BACKGROUND, DARK_TEXT);
             changeFontColor(DARK_TEXT, sender, e);
@@ -691,7 +693,9 @@ namespace Sharp_Auto_Center
          */
         private void lightUIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.formTheme = "lightUI";
+            this.formTheme = "lightUI"; // store selected theme
+
+            // update current theme label and apply theme change
             checkThemeLabel();
             changeColors(LIGHT_BACKGROUND, LIGHT_TEXT);
             changeFontColor(LIGHT_TEXT, sender, e);
@@ -722,6 +726,10 @@ namespace Sharp_Auto_Center
             settingsTab.BackColor   = formBackground;
         }
 
+        /**
+         * Opens a new form window to display the subtotal, tax, and final total
+         * to the user
+         */
         private void buyButton_Click(object sender, EventArgs e)
         {
             purchaseForm endForm = new purchaseForm(total);
@@ -729,9 +737,21 @@ namespace Sharp_Auto_Center
             this.Hide();
         }
 
+        /**
+         * Display some helpful information on how to use the form to the user
+         */
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To use this form, please select your car options in the design tab. After completing your selection continue with your purchase by clicking on the buy button located at the bottom of the screen. Alternatively you can quickly max out your Tesla S buy clicking on the 'Maximise' button on the bottom of the screen, you can also reset the car options as well by pressing the 'Reset' Button","Help");
+        }
+
+        /**
+         * On selecting the exit option either through click, or through shortcut key, 
+         * exit the program
+         */
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
