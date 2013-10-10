@@ -172,7 +172,7 @@ namespace Sharp_Auto_Center
         private void teslaSForm_Load(object sender, EventArgs e)
         {
             // Set window size
-            tabMenu.Size    = new Size(410,415);
+            tabMenu.Size    = new Size(420,415);
             this.Size       = new Size(420,450);
 
             // Set total box to base car cost
@@ -205,15 +205,15 @@ namespace Sharp_Auto_Center
             checkFontLabel();
 
             // Set colours of form based on starting theme
-            if (formTheme == "darkUI")
+            if(formTheme == "darkUI")
             {
-                changeColors(DARK_BACKGROUND, DARK_TEXT);
+                darkUIToolStripMenuItem_Click(sender,e);
             }
             else
             {
-                changeColors(LIGHT_BACKGROUND,LIGHT_TEXT);
+                lightUIToolStripMenuItem_Click(sender,e);
             }
-
+            changeColors(DARK_BACKGROUND, DARK_TEXT);  
         }
 
         private void calculateOptions()
@@ -611,6 +611,7 @@ namespace Sharp_Auto_Center
             themeLabel.Font                 = fontFamilyName;
             fontSelectionBox.Font           = fontFamilyName;
             fontSelectionLabel.Font         = fontFamilyName;
+            titleLabel.Font                 = fontFamilyName;
         }
 
         /**
@@ -656,6 +657,7 @@ namespace Sharp_Auto_Center
             fontSelectionLabel.ForeColor    = fontColor;
             fabricSeatLabel.ForeColor       = fontColor;
             leatherSeatLabel.ForeColor      = fontColor;
+            titleLabel.ForeColor            = fontColor;
         }
 
         /**
@@ -703,6 +705,16 @@ namespace Sharp_Auto_Center
         {
             designTab.BackColor     = formBackground;
             settingsTab.BackColor   = formBackground;
+        }
+
+        private void buyButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Congratulations on your new purchase.","Purchase");
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To use this form, please select your car options in the design tab. After completing your selection continue with your purchase by clicking on the buy button located at the bottom of the screen. Alternatively you can quickly max out your Tesla S buy clicking on the 'Maximise' button on the bottom of the screen, you can also reset the car options as well by pressing the 'Reset' Button","Help");
         }
     }
 }

@@ -90,6 +90,8 @@
             this.darkUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightUIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
             this.batteryGroup.SuspendLayout();
@@ -102,6 +104,7 @@
             this.fontSelectionBox.SuspendLayout();
             this.themeBox.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -121,6 +124,8 @@
             // 
             this.designTab.AutoScroll = true;
             this.designTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.designTab.Controls.Add(this.titleLabel);
+            this.designTab.Controls.Add(this.pictureBox1);
             this.designTab.Controls.Add(this.resetButton);
             this.designTab.Controls.Add(this.maximizeButton);
             this.designTab.Controls.Add(this.buyButton);
@@ -143,7 +148,7 @@
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(18, 711);
+            this.resetButton.Location = new System.Drawing.Point(17, 767);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 29);
             this.resetButton.TabIndex = 16;
@@ -153,7 +158,7 @@
             // 
             // maximizeButton
             // 
-            this.maximizeButton.Location = new System.Drawing.Point(121, 711);
+            this.maximizeButton.Location = new System.Drawing.Point(102, 767);
             this.maximizeButton.Name = "maximizeButton";
             this.maximizeButton.Size = new System.Drawing.Size(151, 29);
             this.maximizeButton.TabIndex = 15;
@@ -163,17 +168,18 @@
             // 
             // buyButton
             // 
-            this.buyButton.Location = new System.Drawing.Point(300, 711);
+            this.buyButton.Location = new System.Drawing.Point(284, 767);
             this.buyButton.Name = "buyButton";
             this.buyButton.Size = new System.Drawing.Size(75, 29);
             this.buyButton.TabIndex = 14;
             this.buyButton.Text = "&Buy Car";
             this.buyButton.UseVisualStyleBackColor = true;
+            this.buyButton.Click += new System.EventHandler(this.buyButton_Click);
             // 
             // totalBox
             // 
             this.totalBox.Enabled = false;
-            this.totalBox.Location = new System.Drawing.Point(275, 667);
+            this.totalBox.Location = new System.Drawing.Point(259, 723);
             this.totalBox.Name = "totalBox";
             this.totalBox.Size = new System.Drawing.Size(100, 26);
             this.totalBox.TabIndex = 13;
@@ -182,7 +188,7 @@
             // 
             this.totalCostLabel.AutoSize = true;
             this.totalCostLabel.ForeColor = System.Drawing.Color.White;
-            this.totalCostLabel.Location = new System.Drawing.Point(191, 670);
+            this.totalCostLabel.Location = new System.Drawing.Point(172, 726);
             this.totalCostLabel.Name = "totalCostLabel";
             this.totalCostLabel.Size = new System.Drawing.Size(81, 20);
             this.totalCostLabel.TabIndex = 12;
@@ -197,7 +203,7 @@
             this.batteryGroup.Controls.Add(this.upgradeBatteryButton);
             this.batteryGroup.Controls.Add(this.baseBatteryButton);
             this.batteryGroup.ForeColor = System.Drawing.Color.White;
-            this.batteryGroup.Location = new System.Drawing.Point(12, 301);
+            this.batteryGroup.Location = new System.Drawing.Point(11, 358);
             this.batteryGroup.Name = "batteryGroup";
             this.batteryGroup.Size = new System.Drawing.Size(373, 118);
             this.batteryGroup.TabIndex = 11;
@@ -284,7 +290,7 @@
             this.extraOptionsBox.Controls.Add(this.techBox);
             this.extraOptionsBox.Controls.Add(this.highPowerBox);
             this.extraOptionsBox.ForeColor = System.Drawing.Color.White;
-            this.extraOptionsBox.Location = new System.Drawing.Point(12, 520);
+            this.extraOptionsBox.Location = new System.Drawing.Point(11, 577);
             this.extraOptionsBox.Name = "extraOptionsBox";
             this.extraOptionsBox.Size = new System.Drawing.Size(369, 128);
             this.extraOptionsBox.TabIndex = 10;
@@ -325,7 +331,7 @@
             // 
             this.highPowerLabel.AutoSize = true;
             this.highPowerLabel.ForeColor = System.Drawing.Color.PaleGreen;
-            this.highPowerLabel.Location = new System.Drawing.Point(259, 27);
+            this.highPowerLabel.Location = new System.Drawing.Point(260, 27);
             this.highPowerLabel.Name = "highPowerLabel";
             this.highPowerLabel.Size = new System.Drawing.Size(54, 20);
             this.highPowerLabel.TabIndex = 9;
@@ -386,7 +392,7 @@
             this.interiorOptionBox.Controls.Add(this.leatherSeatButton);
             this.interiorOptionBox.Controls.Add(this.fabricSeatButton);
             this.interiorOptionBox.ForeColor = System.Drawing.Color.White;
-            this.interiorOptionBox.Location = new System.Drawing.Point(12, 425);
+            this.interiorOptionBox.Location = new System.Drawing.Point(11, 482);
             this.interiorOptionBox.Name = "interiorOptionBox";
             this.interiorOptionBox.Size = new System.Drawing.Size(369, 89);
             this.interiorOptionBox.TabIndex = 9;
@@ -445,7 +451,7 @@
             this.wheelGroup.Controls.Add(this.cyclone19Button);
             this.wheelGroup.Controls.Add(this.Standard19Button);
             this.wheelGroup.ForeColor = System.Drawing.Color.White;
-            this.wheelGroup.Location = new System.Drawing.Point(12, 194);
+            this.wheelGroup.Location = new System.Drawing.Point(11, 251);
             this.wheelGroup.Name = "wheelGroup";
             this.wheelGroup.Size = new System.Drawing.Size(373, 100);
             this.wheelGroup.TabIndex = 8;
@@ -528,7 +534,7 @@
             this.roofGroup.Controls.Add(this.glassRoofButton);
             this.roofGroup.Controls.Add(this.solidRoofButton);
             this.roofGroup.ForeColor = System.Drawing.Color.White;
-            this.roofGroup.Location = new System.Drawing.Point(11, 96);
+            this.roofGroup.Location = new System.Drawing.Point(11, 153);
             this.roofGroup.Name = "roofGroup";
             this.roofGroup.Size = new System.Drawing.Size(370, 92);
             this.roofGroup.TabIndex = 7;
@@ -588,7 +594,7 @@
             this.colourGroup.Controls.Add(this.metallicPaintButton);
             this.colourGroup.Controls.Add(this.solidPaintButton);
             this.colourGroup.ForeColor = System.Drawing.Color.White;
-            this.colourGroup.Location = new System.Drawing.Point(11, 6);
+            this.colourGroup.Location = new System.Drawing.Point(11, 63);
             this.colourGroup.Name = "colourGroup";
             this.colourGroup.Size = new System.Drawing.Size(213, 84);
             this.colourGroup.TabIndex = 4;
@@ -645,7 +651,7 @@
             // 
             this.colourOptionBox.FormattingEnabled = true;
             this.colourOptionBox.ItemHeight = 20;
-            this.colourOptionBox.Location = new System.Drawing.Point(230, 6);
+            this.colourOptionBox.Location = new System.Drawing.Point(230, 63);
             this.colourOptionBox.Name = "colourOptionBox";
             this.colourOptionBox.Size = new System.Drawing.Size(151, 84);
             this.colourOptionBox.TabIndex = 3;
@@ -781,13 +787,34 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sharp_Auto_Center.Properties.Resources.tesla_sLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(171, 18);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(170, 29);
+            this.titleLabel.TabIndex = 18;
+            this.titleLabel.Text = "Tesla Model S";
             // 
             // teslaSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(414, 741);
+            this.ClientSize = new System.Drawing.Size(414, 886);
             this.Controls.Add(this.tabMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -821,6 +848,7 @@
             this.themeBox.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -888,6 +916,8 @@
         private System.Windows.Forms.Label themeLabel;
         private System.Windows.Forms.GroupBox fontSelectionBox;
         private System.Windows.Forms.Label fontSelectionLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label titleLabel;
     }
 }
 
