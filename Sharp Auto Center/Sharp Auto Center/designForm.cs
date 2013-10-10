@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 /**
  * @author Jean-Luc Desroches
+ * 
+ * This form allows the user to customise their Tesla Model S car, while outputing the running subtotal.
+ * When the user is finished they may click the buy button which will call the purchasing form. For the 
+ * purpose of this assignment, purchase form only displays the calculated totals, showing the subtotal
+ * amount of tax charged to the purchase, as well as the final post tax total
  */
 namespace Sharp_Auto_Center
 {
@@ -28,6 +33,8 @@ namespace Sharp_Auto_Center
         private static decimal FOG_LAMPS                = 550m;
         private static decimal BASE_CAR_COST            = 78970m;
         private static decimal NONE                     = 0m;
+
+        // Set colours to be used for the themes
         private static Color DARK_BACKGROUND            = Color.FromArgb(64, 64, 64);
         private static Color DARK_TEXT                  = Color.White;
         private static Color LIGHT_BACKGROUND           = Color.FromArgb(220, 220, 220);
@@ -151,7 +158,8 @@ namespace Sharp_Auto_Center
         }
 
         /**
-         * Returns the colour options based on the selected option
+         * Returns the colour options based on the selected option, 
+         * 0 is solid colours, 1 is  metallic colours
          */
         private Array colours(int selection)
         {
@@ -307,6 +315,10 @@ namespace Sharp_Auto_Center
             calculateTotal();
         }
 
+        /**
+         * On click event of any of the battery options, check which battery the user has selected and
+         * update the costs
+         */
         private void BatteryButton_CheckedChanged(object sender, EventArgs e)
         {
             if (baseBatteryButton.Checked)
@@ -404,6 +416,7 @@ namespace Sharp_Auto_Center
                 this.highPwrPck = NONE;
             }
 
+            // Calculate the costs
             calculateOptions();
             calculateTotal();
         }
@@ -433,6 +446,7 @@ namespace Sharp_Auto_Center
                 this.techPkg = NONE;
             }
 
+            // Calculate the costs
             calculateOptions();
             calculateTotal();
         }
@@ -462,6 +476,7 @@ namespace Sharp_Auto_Center
                 this.smartSpns = NONE;
             }
 
+            // calculate the costs
             calculateOptions();
             calculateTotal();
         }
@@ -491,6 +506,7 @@ namespace Sharp_Auto_Center
                 this.fogLmps = NONE;
             }
 
+            // calculate the costs
             calculateOptions();
             calculateTotal();
         }
@@ -625,7 +641,6 @@ namespace Sharp_Auto_Center
             solidPaintButton.ForeColor          = fontColor;
             metallicPaintButton.ForeColor       = fontColor;
             colourGroup.ForeColor               = fontColor;
-            colourOptionBox.ForeColor           = fontColor;
             roofGroup.ForeColor                 = fontColor;
             solidRoofButton.ForeColor           = fontColor;
             glassRoofButton.ForeColor           = fontColor;
@@ -649,8 +664,8 @@ namespace Sharp_Auto_Center
             fontSelectionBox.ForeColor          = fontColor;
 
             // Run through label colours
-            PaintButtons_CheckedChanged(x,y);
-            roofButtons_CheckedChanged(x,y);
+            PaintButtons_CheckedChanged(x, y);
+            roofButtons_CheckedChanged(x, y);
             WheelButton_CheckedChanged(x, y);
             BatteryButton_CheckedChanged(x, y);
             themeLabel.ForeColor            = fontColor;
@@ -709,7 +724,9 @@ namespace Sharp_Auto_Center
 
         private void buyButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Congratulations on your new purchase.","Purchase");
+            purchaseForm endForm = new purchaseForm(total);
+            endForm.Show();
+            this.Hide();
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)

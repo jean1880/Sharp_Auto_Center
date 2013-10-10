@@ -92,6 +92,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
             this.batteryGroup.SuspendLayout();
@@ -188,11 +189,11 @@
             // 
             this.totalCostLabel.AutoSize = true;
             this.totalCostLabel.ForeColor = System.Drawing.Color.White;
-            this.totalCostLabel.Location = new System.Drawing.Point(172, 726);
+            this.totalCostLabel.Location = new System.Drawing.Point(180, 726);
             this.totalCostLabel.Name = "totalCostLabel";
-            this.totalCostLabel.Size = new System.Drawing.Size(81, 20);
+            this.totalCostLabel.Size = new System.Drawing.Size(69, 20);
             this.totalCostLabel.TabIndex = 12;
-            this.totalCostLabel.Text = "Total Cost";
+            this.totalCostLabel.Text = "Subtotal";
             // 
             // batteryGroup
             // 
@@ -723,7 +724,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fontToolStripMenuItem,
-            this.colorToolStripMenuItem});
+            this.colorToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.fileToolStripMenuItem.Text = "File";
@@ -735,7 +737,7 @@
             this.microsoftSansSerif12ptToolStripMenuItem,
             this.segoeUI12ptToolStripMenuItem});
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fontToolStripMenuItem.Text = "Font...";
             // 
             // franklinGothic12ptToolStripMenuItem
@@ -765,20 +767,20 @@
             this.darkUIToolStripMenuItem,
             this.lightUIToolStripMenuItem});
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.colorToolStripMenuItem.Text = "Theme...";
             // 
             // darkUIToolStripMenuItem
             // 
             this.darkUIToolStripMenuItem.Name = "darkUIToolStripMenuItem";
-            this.darkUIToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.darkUIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.darkUIToolStripMenuItem.Text = "Dark UI";
             this.darkUIToolStripMenuItem.Click += new System.EventHandler(this.darkUIToolStripMenuItem_Click);
             // 
             // lightUIToolStripMenuItem
             // 
             this.lightUIToolStripMenuItem.Name = "lightUIToolStripMenuItem";
-            this.lightUIToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.lightUIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.lightUIToolStripMenuItem.Text = "Light UI";
             this.lightUIToolStripMenuItem.Click += new System.EventHandler(this.lightUIToolStripMenuItem_Click);
             // 
@@ -808,6 +810,13 @@
             this.titleLabel.Size = new System.Drawing.Size(170, 29);
             this.titleLabel.TabIndex = 18;
             this.titleLabel.Text = "Tesla Model S";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // teslaSForm
             // 
@@ -918,6 +927,7 @@
         private System.Windows.Forms.Label fontSelectionLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 
