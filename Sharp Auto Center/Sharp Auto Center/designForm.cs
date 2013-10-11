@@ -159,6 +159,7 @@ namespace Sharp_Auto_Center
         }
 
         /**
+         * @param selection Takes 0 or 1 to determine which colour group to return
          * Returns the colour options based on the selected option, 
          * 0 is solid colours, 1 is  metallic colours
          */
@@ -176,7 +177,8 @@ namespace Sharp_Auto_Center
 
         
         /**
-         * Sets form settings and initialises various settings for the form
+         * Sets form size and initialises all cost label settings for the form, as well as 
+         * setting the default theme to the form
          */
         private void teslaSForm_Load(object sender, EventArgs e)
         {
@@ -226,13 +228,16 @@ namespace Sharp_Auto_Center
             changeColors(DARK_BACKGROUND, DARK_TEXT);  
         }
 
+        /**
+         * Calculates the total cost of the options based on what has been selected
+         */
         private void calculateOptions()
         {
             this.optionsCost = this.smartSpns + this.highPwrPck + this.fogLmps + this.techPkg;
         }
 
         /**
-         * Adds the cost of an item to the total
+         * Calculates the subtotal cost based on the various options the user has selected
          */
         private void calculateTotal()
         {
@@ -243,6 +248,10 @@ namespace Sharp_Auto_Center
             totalBox.Text = total.ToString("C");
         }
 
+        /**
+         * Upon the user clicking any of the wheel options check which wheel has been shosen and 
+         * update the costs appropriately
+         */
         private void WheelButton_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -513,6 +522,10 @@ namespace Sharp_Auto_Center
             calculateTotal();
         }
 
+        /**
+         * On click event select all of the optimum, parts and options for the car and update 
+         * all of the costs appropriately using the functions for all of the options
+         */
         private void maximizeButton_Click(object sender, EventArgs e)
         {
             // Set all options to maximum
@@ -580,7 +593,7 @@ namespace Sharp_Auto_Center
 
         /**
          * Changes the fonts of the form to the font passed into the function
-         * @param fontaFamilyName Name of font to change interfaces to
+         * @param fontFamilyName Font object of font to change interfaces to
          */
         private void changeFont(Font fontFamilyName)
         {
@@ -636,6 +649,8 @@ namespace Sharp_Auto_Center
          * @param fontColor Color object to be set for text
          * @param x         dummy Object to be able to call the button functions
          * @param y         dummy EventArgs to be able to call the button functions
+         * 
+         * Changes the font colours used througout the program to the specified Color object
          */
         private void changeFontColor(Color fontColor, Object x, EventArgs y)
         {
@@ -720,7 +735,7 @@ namespace Sharp_Auto_Center
         }
 
         /**
-         * change the form background colour to the specified colour
+         * change the form and tab interface background colour to the specified colour
          */
         private void changeColors(Color formBackground, Color textColor)
         {
@@ -754,7 +769,7 @@ namespace Sharp_Auto_Center
          */
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         /**

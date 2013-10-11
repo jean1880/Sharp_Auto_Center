@@ -32,7 +32,7 @@
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.designTab = new System.Windows.Forms.TabPage();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.resetButton = new System.Windows.Forms.Button();
             this.maximizeButton = new System.Windows.Forms.Button();
             this.buyButton = new System.Windows.Forms.Button();
@@ -95,7 +95,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMenu.SuspendLayout();
             this.designTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.batteryGroup.SuspendLayout();
             this.extraOptionsBox.SuspendLayout();
             this.interiorOptionBox.SuspendLayout();
@@ -126,7 +126,7 @@
             this.designTab.AutoScroll = true;
             this.designTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.designTab.Controls.Add(this.titleLabel);
-            this.designTab.Controls.Add(this.pictureBox1);
+            this.designTab.Controls.Add(this.logoPictureBox);
             this.designTab.Controls.Add(this.resetButton);
             this.designTab.Controls.Add(this.maximizeButton);
             this.designTab.Controls.Add(this.buyButton);
@@ -157,15 +157,15 @@
             this.titleLabel.TabIndex = 18;
             this.titleLabel.Text = "Tesla Model S";
             // 
-            // pictureBox1
+            // logoPictureBox
             // 
-            this.pictureBox1.Image = global::Sharp_Auto_Center.Properties.Resources.tesla_sLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.logoPictureBox.Image = global::Sharp_Auto_Center.Properties.Resources.tesla_sLogo;
+            this.logoPictureBox.Location = new System.Drawing.Point(26, 6);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(53, 53);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPictureBox.TabIndex = 17;
+            this.logoPictureBox.TabStop = false;
             // 
             // resetButton
             // 
@@ -226,7 +226,7 @@
             this.batteryGroup.ForeColor = System.Drawing.Color.White;
             this.batteryGroup.Location = new System.Drawing.Point(11, 358);
             this.batteryGroup.Name = "batteryGroup";
-            this.batteryGroup.Size = new System.Drawing.Size(373, 118);
+            this.batteryGroup.Size = new System.Drawing.Size(370, 118);
             this.batteryGroup.TabIndex = 11;
             this.batteryGroup.TabStop = false;
             this.batteryGroup.Text = "Battery Options";
@@ -313,7 +313,7 @@
             this.extraOptionsBox.ForeColor = System.Drawing.Color.White;
             this.extraOptionsBox.Location = new System.Drawing.Point(11, 577);
             this.extraOptionsBox.Name = "extraOptionsBox";
-            this.extraOptionsBox.Size = new System.Drawing.Size(369, 128);
+            this.extraOptionsBox.Size = new System.Drawing.Size(370, 128);
             this.extraOptionsBox.TabIndex = 10;
             this.extraOptionsBox.TabStop = false;
             this.extraOptionsBox.Text = "Extras";
@@ -415,7 +415,7 @@
             this.interiorOptionBox.ForeColor = System.Drawing.Color.White;
             this.interiorOptionBox.Location = new System.Drawing.Point(11, 482);
             this.interiorOptionBox.Name = "interiorOptionBox";
-            this.interiorOptionBox.Size = new System.Drawing.Size(369, 89);
+            this.interiorOptionBox.Size = new System.Drawing.Size(370, 89);
             this.interiorOptionBox.TabIndex = 9;
             this.interiorOptionBox.TabStop = false;
             this.interiorOptionBox.Text = "Interior Options";
@@ -474,7 +474,7 @@
             this.wheelGroup.ForeColor = System.Drawing.Color.White;
             this.wheelGroup.Location = new System.Drawing.Point(11, 251);
             this.wheelGroup.Name = "wheelGroup";
-            this.wheelGroup.Size = new System.Drawing.Size(373, 100);
+            this.wheelGroup.Size = new System.Drawing.Size(370, 100);
             this.wheelGroup.TabIndex = 8;
             this.wheelGroup.TabStop = false;
             this.wheelGroup.Text = "Wheel Options";
@@ -672,6 +672,8 @@
             // 
             this.colourOptionBox.FormattingEnabled = true;
             this.colourOptionBox.ItemHeight = 20;
+            this.colourOptionBox.Items.AddRange(new object[] {
+            "ColourOptionBox"});
             this.colourOptionBox.Location = new System.Drawing.Point(230, 63);
             this.colourOptionBox.Name = "colourOptionBox";
             this.colourOptionBox.Size = new System.Drawing.Size(151, 84);
@@ -736,9 +738,9 @@
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(3, 3);
             this.menuStrip.Name = "menuStrip";
+            this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip.Size = new System.Drawing.Size(50, 806);
             this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -840,7 +842,7 @@
             this.tabMenu.ResumeLayout(false);
             this.designTab.ResumeLayout(false);
             this.designTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.batteryGroup.ResumeLayout(false);
             this.batteryGroup.PerformLayout();
             this.extraOptionsBox.ResumeLayout(false);
@@ -928,7 +930,7 @@
         private System.Windows.Forms.Label themeLabel;
         private System.Windows.Forms.GroupBox fontSelectionBox;
         private System.Windows.Forms.Label fontSelectionLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }

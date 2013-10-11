@@ -61,7 +61,9 @@ namespace Sharp_Auto_Center
             Application.Exit();
         }
 
-        //When the form activates calculate the subtotal
+        /**
+         * When the form activates calculate the subtotal
+         */
         private void purchaseForm_Activate(object sender, EventArgs e)
         {
             // Set the subtotal box text to the value of subtotal, and display as currency

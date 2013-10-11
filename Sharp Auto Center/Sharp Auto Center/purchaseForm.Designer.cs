@@ -35,10 +35,10 @@
             this.totalBox = new System.Windows.Forms.TextBox();
             this.taxLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buyButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // subTotalLabel
@@ -95,15 +95,15 @@
             this.totalLabel.TabIndex = 5;
             this.totalLabel.Text = "Total";
             // 
-            // pictureBox1
+            // logoPictureBox
             // 
-            this.pictureBox1.Image = global::Sharp_Auto_Center.Properties.Resources.tesla_sLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.logoPictureBox.Image = global::Sharp_Auto_Center.Properties.Resources.tesla_sLogo;
+            this.logoPictureBox.Location = new System.Drawing.Point(8, 7);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(77, 77);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPictureBox.TabIndex = 6;
+            this.logoPictureBox.TabStop = false;
             // 
             // label1
             // 
@@ -132,7 +132,7 @@
             this.ClientSize = new System.Drawing.Size(292, 209);
             this.Controls.Add(this.buyButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.logoPictureBox);
             this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.taxLabel);
             this.Controls.Add(this.totalBox);
@@ -145,7 +145,7 @@
             this.Text = "Purchase";
             this.Activated += new System.EventHandler(this.purchaseForm_Activate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.purchaseForm_Close);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +159,7 @@
         private System.Windows.Forms.TextBox totalBox;
         private System.Windows.Forms.Label taxLabel;
         private System.Windows.Forms.Label totalLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buyButton;
     }
